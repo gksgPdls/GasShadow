@@ -1,0 +1,162 @@
+/* 3D 보기 위에 block3d.js가 직접 만드는 이름표·공정 바로가기·블록 패널·툴팁 (React 밖 DOM) */
+
+.b3 {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  user-select: none;
+  background: #e9edf1; /* 땅 = 배경 한 색 (3D 안개 색과 같음) */
+}
+.b3 canvas { display: block; width: 100%; height: 100%; cursor: grab; }
+.b3 button { font: inherit; color: inherit; }
+
+/* 상태 점·네모·글자 (패널·바로가기 안) */
+.b3 .dot, .b3 .sq { display: inline-block; flex: none; background: var(--idle); }
+.b3 .dot { width: 7px; height: 7px; border-radius: 50%; }
+.b3 .sq { width: 10px; height: 10px; border-radius: 3px; }
+.b3 .s-legal.dot, .b3 .s-legal.sq { background: var(--legal); }
+.b3 .s-unauth.dot, .b3 .s-unauth.sq { background: var(--unauth); }
+.b3 .s-missing.dot, .b3 .s-missing.sq { background: var(--missing); }
+.b3 .s-warn.dot, .b3 .s-warn.sq { background: var(--warn); }
+.b3 .s-ok.dot, .b3 .s-ok.sq { background: var(--ok); }
+.b3 .st { font-size: 14px; font-weight: 600; }
+.b3 .st.s-legal { color: var(--legal); }
+.b3 .st.s-unauth { color: var(--unauth); }
+.b3 .st.s-missing { color: var(--missing); }
+.b3 .st.s-warn { color: var(--warn); }
+.b3 .st.s-ok { color: var(--ok); }
+.b3 .st.s-idle { color: var(--muted-foreground); font-weight: 500; }
+.b3 .muted { color: var(--muted-foreground); }
+
+/* 공정 바로가기 + [구조물 보기] */
+.b3-bar { position: absolute; top: 12px; left: 12px; right: 12px; z-index: 3; display: flex; align-items: flex-start; gap: 8px; pointer-events: none; }
+.b3-bar .seg {
+  pointer-events: auto;
+  display: inline-flex; flex-wrap: wrap; gap: 2px; padding: 3px;
+  border: 1px solid var(--border); border-radius: 10px;
+  background: rgb(255 255 255 / 0.88); backdrop-filter: blur(8px);
+  box-shadow: 0 1px 2px rgb(16 24 40 / 0.05);
+}
+.b3-bar .seg button {
+  display: inline-flex; align-items: center; gap: 6px;
+  border: 0; background: none; padding: 5px 10px; border-radius: 7px;
+  font-size: 14px; color: var(--muted-foreground); white-space: nowrap;
+}
+.b3-bar .seg button:hover { color: var(--foreground); background: var(--muted); }
+.b3-bar .seg button.on { background: var(--foreground); color: #fff; font-weight: 600; }
+.b3-bar .seg .n { font-family: var(--font-mono); font-size: 13px; opacity: 0.6; }
+/* 공정 바로가기: 고른 곳은 늘, 나머지는 마우스를 올리면 화살표 */
+.b3-bar .seg button[data-goto] { cursor: pointer; padding-right: 6px; }
+.b3-bar .seg button[data-goto] .go { width: 13px; height: 13px; margin-left: -2px; opacity: 0; transform: translateX(-3px); transition: opacity .15s, transform .15s; }
+.b3-bar .seg button[data-goto]:hover .go, .b3-bar .seg button[data-goto].on .go { opacity: 1; transform: none; }
+.b3-bar .seg button[data-goto].on .go { opacity: 0.8; }
+.b3-bar .seg button[data-struct]::before {
+  content: ""; width: 10px; height: 10px; border-radius: 3px; border: 1.5px solid currentColor; opacity: 0.7;
+}
+.b3-bar .seg button[data-struct].on::before { background: currentColor; opacity: 1; box-shadow: inset 0 0 0 1.5px var(--foreground); }
+
+/* 블록 이름표 */
+.b3-tag {
+  position: absolute; left: 0; top: 0; z-index: 2; white-space: nowrap; cursor: pointer;
+  font-size: 14px; padding: 4px 10px; border-radius: 8px; border: 1px solid var(--border);
+  background: rgb(255 255 255 / 0.95); color: var(--muted-foreground);
+  box-shadow: 0 1px 3px rgb(16 24 40 / 0.08);
+}
+.b3-tag b { font-weight: 600; color: var(--foreground); margin-right: 3px; }
+.b3-tag.s-legal { background: var(--legal); border-color: var(--legal); color: #fff; font-weight: 700; }
+.b3-tag.s-legal b { color: #fff; }
+.b3-tag.s-unauth { background: var(--unauth); border-color: var(--unauth); color: #fff; font-weight: 700; }
+.b3-tag.s-unauth b { color: #fff; }
+.b3-tag.s-missing { border-color: var(--missing); color: var(--missing); }
+.b3-tag.s-warn { border-color: var(--warn); color: var(--warn); }
+.b3-tag.s-ok { border-color: var(--ok); color: var(--ok); }
+.b3-tag.sel { box-shadow: 0 0 0 2px var(--primary); }
+
+.b3-place {
+  position: absolute; left: 0; top: 0; z-index: 1; pointer-events: none; white-space: nowrap;
+  font-size: 13px; color: #5b6b7d; letter-spacing: 0.01em;
+}
+
+/* 송풍기 정지 의심 표시 */
+.b3-eq {
+  position: absolute; left: 0; top: 0; z-index: 2; pointer-events: none; white-space: nowrap;
+  font-size: 13px; padding: 3px 9px; border-radius: 8px; background: rgb(255 255 255 / 0.95); border: 1px solid var(--border);
+}
+.b3-eq.danger { background: var(--legal); border-color: var(--legal); color: #fff; font-weight: 700; }
+
+/* 마우스를 올렸을 때 */
+.b3-tip {
+  position: absolute; z-index: 4; pointer-events: none; display: flex; flex-direction: column; gap: 2px;
+  max-width: 300px; padding: 10px 13px; border-radius: 10px; font-size: 14px;
+  background: var(--strip); color: var(--strip-foreground); box-shadow: 0 8px 24px rgb(0 0 0 / 0.2);
+}
+.b3-tip[hidden] { display: none; }
+.b3-tip b { font-weight: 600; }
+.b3-tip small { color: #c3c9d3; font-size: 13px; }
+.b3-tip .st.s-legal { color: var(--legal-on-dark); }
+.b3-tip .st.s-unauth { color: var(--unauth-on-dark); }
+.b3-tip .st.s-missing { color: var(--missing-on-dark); }
+.b3-tip .st.s-warn { color: #f2c46b; }
+.b3-tip .st.s-ok { color: #7fd6a4; }
+.b3-tip .st.s-idle { color: #c3c9d3; }
+
+/* 블록을 눌렀을 때 오른쪽 패널 */
+.b3-panel {
+  position: absolute; top: 12px; right: 12px; width: 280px; z-index: 3;
+  max-height: calc(100% - 24px); overflow-y: auto;
+  padding: 14px 16px; border: 1px solid var(--border); border-radius: 12px; font-size: 13px;
+  background: rgb(255 255 255 / 0.97); box-shadow: 0 12px 32px rgb(16 24 40 / 0.12);
+}
+.b3-panel[hidden] { display: none; }
+.b3-panel-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px; }
+.b3-panel-head b { font-size: 16px; font-weight: 600; }
+.b3-panel .muted { font-size: 12px; line-height: 1.5; }
+.b3-panel ul { list-style: none; margin: 10px 0; padding: 0; }
+.b3-panel li {
+  display: grid; grid-template-columns: 12px 1fr auto; gap: 8px; align-items: start;
+  padding: 8px 0; border-top: 1px solid var(--border);
+}
+.b3-panel li .sq { margin-top: 4px; }
+.b3-panel li span { display: flex; flex-direction: column; gap: 1px; font-weight: 600; }
+.b3-panel li small { color: var(--muted-foreground); font-size: 11.5px; font-weight: 400; }
+.b3-panel li em { font-style: normal; }
+.b3-panel-foot { display: flex; justify-content: flex-end; gap: 6px; }
+.b3-panel .btn {
+  height: 30px; padding: 0 12px; border-radius: 8px; font-size: 12px; font-weight: 500;
+  border: 1px solid var(--border); background: #fff; cursor: pointer;
+}
+.b3-panel .btn:hover { background: var(--muted); }
+.b3-panel .btn.ghost { border-color: transparent; color: var(--muted-foreground); }
+.b3-panel .btn:not(.ghost) { background: var(--primary); border-color: var(--primary); color: #fff; }
+.b3-panel .btn:not(.ghost):hover { background: color-mix(in srgb, var(--primary) 88%, black); }
+
+@media (max-width: 700px) {
+  .b3-panel { width: auto; left: 12px; top: auto; bottom: 12px; max-height: 60%; }
+}
+
+/* 이벤트 말풍선 (say) */
+.b3-say {
+  position: absolute; left: 0; top: 0; z-index: 4; pointer-events: none;
+  width: max-content; max-width: 300px; padding: 9px 13px 9px 30px; border-radius: 12px;
+  font-size: 14px; line-height: 1.45; font-weight: 500; color: var(--foreground);
+  background: #fff; border: 1.5px solid var(--border); box-shadow: 0 10px 28px rgb(16 24 40 / 0.18);
+  transition: opacity 0.6s; animation: b3-say-in 0.25s ease-out;
+}
+.b3-say::before {
+  content: ""; position: absolute; left: 12px; top: 15px; width: 9px; height: 9px; border-radius: 50%; background: var(--primary);
+}
+.b3-say::after {
+  content: ""; position: absolute; left: 50%; bottom: -7px; width: 12px; height: 12px; background: inherit;
+  border-right: inherit; border-bottom: inherit; transform: translateX(-50%) rotate(45deg);
+}
+.b3-say.t-ok::before { background: var(--ok); }
+.b3-say.t-warn { border-color: var(--warn); }
+.b3-say.t-warn::before { background: var(--warn); }
+.b3-say.t-missing { border-color: var(--missing); }
+.b3-say.t-missing::before { background: var(--missing); }
+.b3-say.t-legal { background: var(--legal); border-color: var(--legal); color: #fff; font-weight: 600; }
+.b3-say.t-legal::before { background: #fff; }
+.b3-say.t-unauth { background: var(--unauth); border-color: var(--unauth); color: #fff; font-weight: 600; }
+.b3-say.t-unauth::before { background: #fff; }
+.b3-say.fading { opacity: 0; }
+@keyframes b3-say-in { from { opacity: 0; margin-top: 6px; } to { opacity: 1; margin-top: 0; } }

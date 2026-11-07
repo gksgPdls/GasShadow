@@ -1,0 +1,1776 @@
+{
+ "model": {
+  "n_windows": 9847,
+  "recall_by_true_mtt": {
+   "0-5min": {
+    "n": 365,
+    "recall": 0.852054794520548
+   },
+   "5-10min": {
+    "n": 363,
+    "recall": 0.7630853994490359
+   },
+   "10-15min": {
+    "n": 337,
+    "recall": 0.7893175074183977
+   },
+   "15-20min": {
+    "n": 279,
+    "recall": 0.7634408602150538
+   },
+   "20-25min": {
+    "n": 209,
+    "recall": 0.784688995215311
+   },
+   "25-30min": {
+    "n": 128,
+    "recall": 0.890625
+   }
+  },
+  "recall_by_trend_visibility": {
+   "positives_trend_visible": 597,
+   "positives_trend_not_visible": 1084,
+   "recall_trend_visible": 0.9346733668341709,
+   "recall_trend_not_visible": 0.7260147601476015
+  },
+  "risk30": {
+   "threshold": 0.1735,
+   "n": 9847,
+   "positives": 1681,
+   "precision": 0.36758677234216997,
+   "recall": 0.800118976799524,
+   "f1": 0.5037453183520599,
+   "confusion_matrix": {
+    "tn": 5852,
+    "fp": 2314,
+    "fn": 336,
+    "tp": 1345
+   },
+   "false_negatives": 336,
+   "false_positives": 2314,
+   "pr_auc": 0.4958632499340486,
+   "roc_auc": 0.8306427326024841,
+   "brier": 0.110867125006601
+  },
+  "risk60_from_state": {
+   "threshold": 0.5,
+   "n": 9847,
+   "positives": 1870,
+   "precision": 0.4127371273712737,
+   "recall": 0.8144385026737968,
+   "f1": 0.547841726618705,
+   "confusion_matrix": {
+    "tn": 5810,
+    "fp": 2167,
+    "fn": 347,
+    "tp": 1523
+   },
+   "false_negatives": 347,
+   "false_positives": 2167,
+   "pr_auc": 0.37138816714890616,
+   "roc_auc": 0.7713912458210405,
+   "brier": 0.2553061846247588
+  },
+  "gas": {
+   "n": 9847,
+   "accuracy": 0.6804102772417996,
+   "macro_f1_all": 0.4064028154930892,
+   "macro_f1_gases_only": 0.32325717228068396,
+   "none_share": 0.810094445008632,
+   "per_class": {
+    "O2": {
+     "precision": 0.34959349593495936,
+     "recall": 0.4653679653679654,
+     "f1": 0.39925719591457753,
+     "support": 462
+    },
+    "LEL": {
+     "precision": 0.18394648829431437,
+     "recall": 0.5188679245283019,
+     "f1": 0.2716049382716049,
+     "support": 318
+    },
+    "CO": {
+     "precision": 0.2537764350453172,
+     "recall": 0.48695652173913045,
+     "f1": 0.3336643495531281,
+     "support": 345
+    },
+    "H2S": {
+     "precision": 0.13879781420765028,
+     "recall": 0.49224806201550386,
+     "f1": 0.216538789428815,
+     "support": 258
+    },
+    "CO2": {
+     "precision": 0.3577371048252912,
+     "recall": 0.4414784394250513,
+     "f1": 0.3952205882352941,
+     "support": 487
+    },
+    "NONE": {
+     "precision": 0.9436413837908072,
+     "recall": 0.7283439889682838,
+     "f1": 0.8221310315551154,
+     "support": 7977
+    }
+   },
+   "confusion_matrix": {
+    "labels": [
+     "O2",
+     "LEL",
+     "CO",
+     "H2S",
+     "CO2",
+     "NONE"
+    ],
+    "rows_true_cols_pred": [
+     [
+      215,
+      25,
+      39,
+      76,
+      35,
+      72
+     ],
+     [
+      23,
+      165,
+      13,
+      18,
+      10,
+      89
+     ],
+     [
+      15,
+      17,
+      168,
+      58,
+      21,
+      66
+     ],
+     [
+      20,
+      26,
+      7,
+      127,
+      29,
+      49
+     ],
+     [
+      4,
+      83,
+      55,
+      59,
+      215,
+      71
+     ],
+     [
+      338,
+      581,
+      380,
+      577,
+      291,
+      5810
+     ]
+    ]
+   },
+   "classes_present": [
+    "O2",
+    "LEL",
+    "CO",
+    "H2S",
+    "CO2",
+    "NONE"
+   ]
+  },
+  "time": {
+   "n_true": 1870,
+   "n_predicted": 1523,
+   "coverage": 0.8144385026737968,
+   "mae": 7.03473407747866,
+   "median_ae": 5.15,
+   "rmse": 9.904526843955061,
+   "within_5min": 0.4891661195009849,
+   "within_10min": 0.7649376231122784,
+   "bias": -1.6206172028890347
+  },
+  "time_per_gas": {
+   "O2": {
+    "n_true": 462,
+    "n_predicted": 390,
+    "mae": 7.340769230769231,
+    "median_ae": 5.75,
+    "within_5min": 0.4512820512820513,
+    "within_10min": 0.7
+   },
+   "LEL": {
+    "n_true": 318,
+    "n_predicted": 229,
+    "mae": 9.252838427947596,
+    "median_ae": 6.350000000000001,
+    "within_5min": 0.4497816593886463,
+    "within_10min": 0.7030567685589519
+   },
+   "CO": {
+    "n_true": 345,
+    "n_predicted": 279,
+    "mae": 6.290860215053762,
+    "median_ae": 5.699999999999999,
+    "within_5min": 0.46236559139784944,
+    "within_10min": 0.7921146953405018
+   },
+   "H2S": {
+    "n_true": 258,
+    "n_predicted": 209,
+    "mae": 4.6650717703349285,
+    "median_ae": 3.4499999999999993,
+    "within_5min": 0.6363636363636364,
+    "within_10min": 0.8803827751196173
+   },
+   "CO2": {
+    "n_true": 487,
+    "n_predicted": 416,
+    "mae": 7.216225961538461,
+    "median_ae": 5.15,
+    "within_5min": 0.49038461538461536,
+    "within_10min": 0.7836538461538461
+   }
+  },
+  "forecast_state": {
+   "accuracy": 0.7272265664669443,
+   "per_state": {
+    "STABLE": {
+     "precision": 0.9436413837908072,
+     "recall": 0.7283439889682838,
+     "f1": 0.8221310315551154,
+     "support": 7977
+    },
+    "WATCH": {
+     "precision": 1.0,
+     "recall": 0.010582010582010581,
+     "f1": 0.020942408376963352,
+     "support": 189
+    },
+    "IMMINENT": {
+     "precision": 0.3657809110629067,
+     "recall": 0.802498512790006,
+     "f1": 0.5025144347178245,
+     "support": 1681
+    }
+   },
+   "confusion_matrix": {
+    "labels": [
+     "STABLE",
+     "WATCH",
+     "IMMINENT"
+    ],
+    "rows_true_cols_pred": [
+     [
+      5810,
+      0,
+      2167
+     ],
+     [
+      15,
+      2,
+      172
+     ],
+     [
+      332,
+      0,
+      1349
+     ]
+    ]
+   }
+  },
+  "by_task_type": {
+   "BARGE_WORK": {
+    "n": 669,
+    "risk30": {
+     "positives": 117,
+     "precision": 0.47572815533980584,
+     "recall": 0.8376068376068376,
+     "f1": 0.6068111455108359,
+     "false_negatives": 19,
+     "false_positives": 108
+    },
+    "gas_macro_f1": 0.3447642542711676,
+    "time": {
+     "n_true": 117,
+     "mae": 5.046078431372548,
+     "within_10min": 0.8235294117647058
+    }
+   },
+   "COMMISSIONING": {
+    "n": 1222,
+    "risk30": {
+     "positives": 196,
+     "precision": 0.3630831643002028,
+     "recall": 0.9132653061224489,
+     "f1": 0.5195936139332366,
+     "false_negatives": 17,
+     "false_positives": 314
+    },
+    "gas_macro_f1": 0.3494324485222317,
+    "time": {
+     "n_true": 208,
+     "mae": 5.8264397905759155,
+     "within_10min": 0.806282722513089
+    }
+   },
+   "ELECTRICAL": {
+    "n": 656,
+    "risk30": {
+     "positives": 83,
+     "precision": 0.33771929824561403,
+     "recall": 0.927710843373494,
+     "f1": 0.49517684887459806,
+     "false_negatives": 6,
+     "false_positives": 151
+    },
+    "gas_macro_f1": 0.3541806809657692,
+    "time": {
+     "n_true": 88,
+     "mae": 4.905487804878048,
+     "within_10min": 0.9146341463414634
+    }
+   },
+   "FLUID_SUPPLY": {
+    "n": 1284,
+    "risk30": {
+     "positives": 273,
+     "precision": 0.4368932038834951,
+     "recall": 0.8241758241758241,
+     "f1": 0.5710659898477157,
+     "false_negatives": 48,
+     "false_positives": 290
+    },
+    "gas_macro_f1": 0.39672412666310874,
+    "time": {
+     "n_true": 295,
+     "mae": 5.769715447154471,
+     "within_10min": 0.7926829268292683
+    }
+   },
+   "HEAVY_LIFTING": {
+    "n": 679,
+    "risk30": {
+     "positives": 153,
+     "precision": 0.31981981981981983,
+     "recall": 0.46405228758169936,
+     "f1": 0.37866666666666665,
+     "false_negatives": 82,
+     "false_positives": 151
+    },
+    "gas_macro_f1": 0.3054153128617146,
+    "time": {
+     "n_true": 193,
+     "mae": 9.23409090909091,
+     "within_10min": 0.5636363636363636
+    }
+   },
+   "HOT_WORK": {
+    "n": 1291,
+    "risk30": {
+     "positives": 266,
+     "precision": 0.4174397031539889,
+     "recall": 0.8458646616541353,
+     "f1": 0.5590062111801242,
+     "false_negatives": 41,
+     "false_positives": 314
+    },
+    "gas_macro_f1": 0.33753548087467045,
+    "time": {
+     "n_true": 299,
+     "mae": 8.49748062015504,
+     "within_10min": 0.7364341085271318
+    }
+   },
+   "NONE": {
+    "n": 285,
+    "risk30": {
+     "positives": 25,
+     "precision": 0.0,
+     "recall": 0.0,
+     "f1": 0.0,
+     "false_negatives": 25,
+     "false_positives": 0
+    },
+    "gas_macro_f1": 0.15902140672782875,
+    "time": {
+     "n_true": 25
+    }
+   },
+   "OTHER": {
+    "n": 955,
+    "risk30": {
+     "positives": 127,
+     "precision": 0.25705329153605017,
+     "recall": 0.6456692913385826,
+     "f1": 0.36771300448430494,
+     "false_negatives": 45,
+     "false_positives": 237
+    },
+    "gas_macro_f1": 0.3481437482377389,
+    "time": {
+     "n_true": 157,
+     "mae": 10.79191919191919,
+     "within_10min": 0.696969696969697
+    }
+   },
+   "PAINTING_CLEANING": {
+    "n": 895,
+    "risk30": {
+     "positives": 226,
+     "precision": 0.47761194029850745,
+     "recall": 0.8495575221238938,
+     "f1": 0.6114649681528662,
+     "false_negatives": 34,
+     "false_positives": 210
+    },
+    "gas_macro_f1": 0.4210143540305474,
+    "time": {
+     "n_true": 240,
+     "mae": 5.724757281553399,
+     "within_10min": 0.8543689320388349
+    }
+   },
+   "PRESSURE_TEST": {
+    "n": 674,
+    "risk30": {
+     "positives": 109,
+     "precision": 0.4309623430962343,
+     "recall": 0.944954128440367,
+     "f1": 0.5919540229885057,
+     "false_negatives": 6,
+     "false_positives": 136
+    },
+    "gas_macro_f1": 0.36709279869131556,
+    "time": {
+     "n_true": 109,
+     "mae": 4.282038834951457,
+     "within_10min": 0.941747572815534
+    }
+   },
+   "RADIOGRAPHY": {
+    "n": 658,
+    "risk30": {
+     "positives": 68,
+     "precision": 0.22053231939163498,
+     "recall": 0.8529411764705882,
+     "f1": 0.3504531722054381,
+     "false_negatives": 10,
+     "false_positives": 205
+    },
+    "gas_macro_f1": 0.27168545579051034,
+    "time": {
+     "n_true": 76,
+     "mae": 6.298484848484849,
+     "within_10min": 0.8181818181818182
+    }
+   },
+   "SCAFFOLDING": {
+    "n": 579,
+    "risk30": {
+     "positives": 38,
+     "precision": 0.15021459227467812,
+     "recall": 0.9210526315789473,
+     "f1": 0.25830258302583026,
+     "false_negatives": 3,
+     "false_positives": 198
+    },
+    "gas_macro_f1": 0.22359332734479276,
+    "time": {
+     "n_true": 63,
+     "mae": 15.87,
+     "within_10min": 0.15
+    }
+   }
+  },
+  "by_task_state": {
+   "PRE_WORK": {
+    "n": 583,
+    "risk30": {
+     "positives": 102,
+     "precision": 0.27208480565371024,
+     "recall": 0.7549019607843137,
+     "f1": 0.4,
+     "false_negatives": 25,
+     "false_positives": 206
+    },
+    "gas_macro_f1": 0.259006951374992,
+    "time": {
+     "n_true": 138,
+     "mae": 8.053125,
+     "within_10min": 0.6964285714285714
+    }
+   },
+   "RECOVERY": {
+    "n": 1923,
+    "risk30": {
+     "positives": 17,
+     "precision": 0.6666666666666666,
+     "recall": 0.47058823529411764,
+     "f1": 0.5517241379310345,
+     "false_negatives": 9,
+     "false_positives": 4
+    },
+    "gas_macro_f1": 0.37244823700155116,
+    "time": {
+     "n_true": 17,
+     "mae": 1.8875000000000002,
+     "within_10min": 1.0
+    }
+   },
+   "WORK": {
+    "n": 7341,
+    "risk30": {
+     "positives": 1562,
+     "precision": 0.3745541022592152,
+     "recall": 0.8066581306017926,
+     "f1": 0.5115712545676004,
+     "false_negatives": 302,
+     "false_positives": 2104
+    },
+    "gas_macro_f1": 0.40672428493600893,
+    "time": {
+     "n_true": 1715,
+     "mae": 6.982786885245902,
+     "within_10min": 0.7690662865288667
+    }
+   }
+  },
+  "false_alarm": {
+   "normal_episodes": 113,
+   "windows_in_normal_episodes": 7227,
+   "window_false_alarm_rate": 0.29458973294589735,
+   "window_imminent_false_alarm_rate": 0.29458973294589735,
+   "episode_false_alarm_rate": 0.9469026548672567,
+   "window_false_alarm_rate_y60_negative": 0.27165601103171616
+  },
+  "lead_time": {
+   "episodes_with_exceed": 78,
+   "detected_before_exceed": 77,
+   "mean_lead_min_all": 23.846153846153847,
+   "mean_lead_min_detected": 24.155844155844157,
+   "median_lead_min_detected": 23.0
+  },
+  "lead_time_imminent_only": {
+   "episodes_with_exceed": 78,
+   "detected_before_exceed": 77,
+   "mean_lead_min_all": 23.846153846153847,
+   "mean_lead_min_detected": 24.155844155844157,
+   "median_lead_min_detected": 23.0
+  },
+  "unavailable": {
+   "anchors_total": 14300,
+   "unavailable": 4453,
+   "unavailable_rate": 0.31139860139860137,
+   "reasons": {
+    "legal_exceeded(rule)": 2310,
+    "less_than_10_minutes": 1714,
+    "latest_COMM_LOSS": 248,
+    "valid_ratio<0.8": 160,
+    "latest_MISSING": 13,
+    "insufficient_valid_history": 8
+   }
+  },
+  "stabilization": {
+   "n_confirm=1": {
+    "risk30_from_state": {
+     "precision": 0.3657809110629067,
+     "recall": 0.802498512790006,
+     "f1": 0.5025144347178245
+    },
+    "false_alarm": {
+     "normal_episodes": 113,
+     "windows_in_normal_episodes": 7227,
+     "window_false_alarm_rate": 0.29458973294589735,
+     "window_imminent_false_alarm_rate": 0.29458973294589735,
+     "episode_false_alarm_rate": 0.9469026548672567,
+     "window_false_alarm_rate_y60_negative": 0.27165601103171616
+    },
+    "lead_time": {
+     "episodes_with_exceed": 78,
+     "detected_before_exceed": 77,
+     "mean_lead_min_all": 23.846153846153847,
+     "mean_lead_min_detected": 24.155844155844157,
+     "median_lead_min_detected": 23.0
+    }
+   },
+   "n_confirm=2": {
+    "risk30_from_state": {
+     "precision": 0.35467980295566504,
+     "recall": 0.8138013087447947,
+     "f1": 0.49404117009750814
+    },
+    "false_alarm": {
+     "normal_episodes": 113,
+     "windows_in_normal_episodes": 7227,
+     "window_false_alarm_rate": 0.3107790231077902,
+     "window_imminent_false_alarm_rate": 0.3107790231077902,
+     "episode_false_alarm_rate": 0.9469026548672567,
+     "window_false_alarm_rate_y60_negative": 0.28983327065312775
+    },
+    "lead_time": {
+     "episodes_with_exceed": 78,
+     "detected_before_exceed": 77,
+     "mean_lead_min_all": 23.91025641025641,
+     "mean_lead_min_detected": 24.22077922077922,
+     "median_lead_min_detected": 23.0
+    }
+   },
+   "n_confirm=3": {
+    "risk30_from_state": {
+     "precision": 0.3438735177865613,
+     "recall": 0.828078524687686,
+     "f1": 0.4859486821434805
+    },
+    "false_alarm": {
+     "normal_episodes": 113,
+     "windows_in_normal_episodes": 7227,
+     "window_false_alarm_rate": 0.3302891933028919,
+     "window_imminent_false_alarm_rate": 0.3302891933028919,
+     "episode_false_alarm_rate": 0.9469026548672567,
+     "window_false_alarm_rate_y60_negative": 0.3106430989093644
+    },
+    "lead_time": {
+     "episodes_with_exceed": 78,
+     "detected_before_exceed": 77,
+     "mean_lead_min_all": 23.91025641025641,
+     "mean_lead_min_detected": 24.22077922077922,
+     "median_lead_min_detected": 23.0
+    }
+   }
+  }
+ },
+ "baseline_10m": {
+  "n_windows": 9847,
+  "recall_by_true_mtt": {
+   "0-5min": {
+    "n": 365,
+    "recall": 0.7506849315068493
+   },
+   "5-10min": {
+    "n": 363,
+    "recall": 0.32231404958677684
+   },
+   "10-15min": {
+    "n": 337,
+    "recall": 0.22551928783382788
+   },
+   "15-20min": {
+    "n": 279,
+    "recall": 0.13620071684587814
+   },
+   "20-25min": {
+    "n": 209,
+    "recall": 0.0861244019138756
+   },
+   "25-30min": {
+    "n": 128,
+    "recall": 0.109375
+   }
+  },
+  "recall_by_trend_visibility": {
+   "positives_trend_visible": 597,
+   "positives_trend_not_visible": 1084,
+   "recall_trend_visible": 0.661641541038526,
+   "recall_trend_not_visible": 0.13099630996309963
+  },
+  "risk30": {
+   "threshold": 0.5,
+   "n": 9847,
+   "positives": 1681,
+   "precision": 0.21758508914100486,
+   "recall": 0.3194527067221892,
+   "f1": 0.2588575560375994,
+   "confusion_matrix": {
+    "tn": 6235,
+    "fp": 1931,
+    "fn": 1144,
+    "tp": 537
+   },
+   "false_negatives": 1144,
+   "false_positives": 1931,
+   "pr_auc": 0.18651320232894536,
+   "roc_auc": 0.5258096315842461,
+   "brier": 0.3166349856496078
+  },
+  "risk60_from_state": {
+   "threshold": 0.5,
+   "n": 9847,
+   "positives": 1870,
+   "precision": 0.19738520408163265,
+   "recall": 0.33101604278074864,
+   "f1": 0.24730323611666,
+   "confusion_matrix": {
+    "tn": 5460,
+    "fp": 2517,
+    "fn": 1251,
+    "tp": 619
+   },
+   "false_negatives": 1251,
+   "false_positives": 2517,
+   "pr_auc": 0.192381438834616,
+   "roc_auc": 0.5077419439176403,
+   "brier": 0.38265461561897024
+  },
+  "gas": {
+   "n": 9847,
+   "accuracy": 0.614603432517518,
+   "macro_f1_all": 0.314806015658039,
+   "macro_f1_gases_only": 0.22907440833213047,
+   "none_share": 0.810094445008632,
+   "per_class": {
+    "O2": {
+     "precision": 0.20448877805486285,
+     "recall": 0.354978354978355,
+     "f1": 0.25949367088607594,
+     "support": 462
+    },
+    "LEL": {
+     "precision": 0.18309859154929578,
+     "recall": 0.3270440251572327,
+     "f1": 0.23476297968397292,
+     "support": 318
+    },
+    "CO": {
+     "precision": 0.13537906137184116,
+     "recall": 0.21739130434782608,
+     "f1": 0.1668520578420467,
+     "support": 345
+    },
+    "H2S": {
+     "precision": 0.09950248756218906,
+     "recall": 0.23255813953488372,
+     "f1": 0.13937282229965156,
+     "support": 258
+    },
+    "CO2": {
+     "precision": 0.3103448275862069,
+     "recall": 0.38809034907597534,
+     "f1": 0.3448905109489051,
+     "support": 487
+    },
+    "NONE": {
+     "precision": 0.813589628967367,
+     "recall": 0.6844678450545317,
+     "f1": 0.7434640522875817,
+     "support": 7977
+    }
+   },
+   "confusion_matrix": {
+    "labels": [
+     "O2",
+     "LEL",
+     "CO",
+     "H2S",
+     "CO2",
+     "NONE"
+    ],
+    "rows_true_cols_pred": [
+     [
+      164,
+      0,
+      0,
+      0,
+      0,
+      298
+     ],
+     [
+      0,
+      104,
+      0,
+      0,
+      0,
+      214
+     ],
+     [
+      0,
+      0,
+      75,
+      27,
+      0,
+      243
+     ],
+     [
+      0,
+      0,
+      0,
+      60,
+      0,
+      198
+     ],
+     [
+      0,
+      0,
+      0,
+      0,
+      189,
+      298
+     ],
+     [
+      638,
+      464,
+      479,
+      516,
+      420,
+      5460
+     ]
+    ]
+   },
+   "classes_present": [
+    "O2",
+    "LEL",
+    "CO",
+    "H2S",
+    "CO2",
+    "NONE"
+   ]
+  },
+  "time": {
+   "n_true": 1870,
+   "n_predicted": 619,
+   "coverage": 0.33101604278074864,
+   "mae": 7.880936995153474,
+   "median_ae": 3.5999999999999996,
+   "rmse": 12.982516514780285,
+   "within_5min": 0.592891760904685,
+   "within_10min": 0.7415185783521809,
+   "bias": 1.0764135702746365
+  },
+  "time_per_gas": {
+   "O2": {
+    "n_true": 462,
+    "n_predicted": 164,
+    "mae": 7.601219512195121,
+    "median_ae": 3.575,
+    "within_5min": 0.5670731707317073,
+    "within_10min": 0.7317073170731707
+   },
+   "LEL": {
+    "n_true": 318,
+    "n_predicted": 104,
+    "mae": 13.19951923076923,
+    "median_ae": 7.175,
+    "within_5min": 0.4423076923076923,
+    "within_10min": 0.6153846153846154
+   },
+   "CO": {
+    "n_true": 345,
+    "n_predicted": 102,
+    "mae": 8.13921568627451,
+    "median_ae": 4.475,
+    "within_5min": 0.5784313725490197,
+    "within_10min": 0.7254901960784313
+   },
+   "H2S": {
+    "n_true": 258,
+    "n_predicted": 60,
+    "mae": 6.9575,
+    "median_ae": 2.35,
+    "within_5min": 0.6666666666666666,
+    "within_10min": 0.7666666666666667
+   },
+   "CO2": {
+    "n_true": 487,
+    "n_predicted": 189,
+    "mae": 5.35079365079365,
+    "median_ae": 2.3499999999999996,
+    "within_5min": 0.6825396825396826,
+    "within_10min": 0.8201058201058201
+   }
+  },
+  "forecast_state": {
+   "accuracy": 0.6096272976541078,
+   "per_state": {
+    "STABLE": {
+     "precision": 0.813589628967367,
+     "recall": 0.6844678450545317,
+     "f1": 0.7434640522875817,
+     "support": 7977
+    },
+    "WATCH": {
+     "precision": 0.008982035928143712,
+     "recall": 0.031746031746031744,
+     "f1": 0.014002333722287048,
+     "support": 189
+    },
+    "IMMINENT": {
+     "precision": 0.21758508914100486,
+     "recall": 0.3194527067221892,
+     "f1": 0.2588575560375994,
+     "support": 1681
+    }
+   },
+   "confusion_matrix": {
+    "labels": [
+     "STABLE",
+     "WATCH",
+     "IMMINENT"
+    ],
+    "rows_true_cols_pred": [
+     [
+      5460,
+      617,
+      1900
+     ],
+     [
+      152,
+      6,
+      31
+     ],
+     [
+      1099,
+      45,
+      537
+     ]
+    ]
+   }
+  },
+  "by_task_type": {
+   "BARGE_WORK": {
+    "n": 669,
+    "risk30": {
+     "positives": 117,
+     "precision": 0.2265625,
+     "recall": 0.24786324786324787,
+     "f1": 0.23673469387755103,
+     "false_negatives": 88,
+     "false_positives": 99
+    },
+    "gas_macro_f1": 0.2900134174278795,
+    "time": {
+     "n_true": 117,
+     "mae": 7.32258064516129,
+     "within_10min": 0.7741935483870968
+    }
+   },
+   "COMMISSIONING": {
+    "n": 1222,
+    "risk30": {
+     "positives": 196,
+     "precision": 0.2125,
+     "recall": 0.3469387755102041,
+     "f1": 0.26356589147286824,
+     "false_negatives": 128,
+     "false_positives": 252
+    },
+    "gas_macro_f1": 0.30467710668224074,
+    "time": {
+     "n_true": 208,
+     "mae": 5.390972222222222,
+     "within_10min": 0.8472222222222222
+    }
+   },
+   "ELECTRICAL": {
+    "n": 656,
+    "risk30": {
+     "positives": 83,
+     "precision": 0.22388059701492538,
+     "recall": 0.3614457831325301,
+     "f1": 0.2764976958525346,
+     "false_negatives": 53,
+     "false_positives": 104
+    },
+    "gas_macro_f1": 0.2842367287576215,
+    "time": {
+     "n_true": 88,
+     "mae": 6.385937500000001,
+     "within_10min": 0.8125
+    }
+   },
+   "FLUID_SUPPLY": {
+    "n": 1284,
+    "risk30": {
+     "positives": 273,
+     "precision": 0.21252796420581654,
+     "recall": 0.34798534798534797,
+     "f1": 0.2638888888888889,
+     "false_negatives": 178,
+     "false_positives": 352
+    },
+    "gas_macro_f1": 0.27633678665024775,
+    "time": {
+     "n_true": 295,
+     "mae": 5.17135922330097,
+     "within_10min": 0.9029126213592233
+    }
+   },
+   "HEAVY_LIFTING": {
+    "n": 679,
+    "risk30": {
+     "positives": 153,
+     "precision": 0.2871287128712871,
+     "recall": 0.3790849673202614,
+     "f1": 0.3267605633802817,
+     "false_negatives": 95,
+     "false_positives": 144
+    },
+    "gas_macro_f1": 0.2634632187047219,
+    "time": {
+     "n_true": 193,
+     "mae": 7.341129032258065,
+     "within_10min": 0.7580645161290323
+    }
+   },
+   "HOT_WORK": {
+    "n": 1291,
+    "risk30": {
+     "positives": 266,
+     "precision": 0.25753424657534246,
+     "recall": 0.3533834586466165,
+     "f1": 0.2979397781299525,
+     "false_negatives": 172,
+     "false_positives": 271
+    },
+    "gas_macro_f1": 0.2662367456530315,
+    "time": {
+     "n_true": 299,
+     "mae": 6.927619047619048,
+     "within_10min": 0.7523809523809524
+    }
+   },
+   "NONE": {
+    "n": 285,
+    "risk30": {
+     "positives": 25,
+     "precision": 0.0,
+     "recall": 0.0,
+     "f1": 0.0,
+     "false_negatives": 25,
+     "false_positives": 0
+    },
+    "gas_macro_f1": 0.15902140672782875,
+    "time": {
+     "n_true": 25
+    }
+   },
+   "OTHER": {
+    "n": 955,
+    "risk30": {
+     "positives": 127,
+     "precision": 0.1067193675889328,
+     "recall": 0.2125984251968504,
+     "f1": 0.14210526315789473,
+     "false_negatives": 100,
+     "false_positives": 226
+    },
+    "gas_macro_f1": 0.2879014164730853,
+    "time": {
+     "n_true": 157,
+     "mae": 18.17966101694915,
+     "within_10min": 0.423728813559322
+    }
+   },
+   "PAINTING_CLEANING": {
+    "n": 895,
+    "risk30": {
+     "positives": 226,
+     "precision": 0.2926829268292683,
+     "recall": 0.21238938053097345,
+     "f1": 0.24615384615384617,
+     "false_negatives": 178,
+     "false_positives": 116
+    },
+    "gas_macro_f1": 0.3139225502083969,
+    "time": {
+     "n_true": 240,
+     "mae": 6.496078431372549,
+     "within_10min": 0.7843137254901961
+    }
+   },
+   "PRESSURE_TEST": {
+    "n": 674,
+    "risk30": {
+     "positives": 109,
+     "precision": 0.19786096256684493,
+     "recall": 0.3394495412844037,
+     "f1": 0.25,
+     "false_negatives": 72,
+     "false_positives": 150
+    },
+    "gas_macro_f1": 0.25105153359170035,
+    "time": {
+     "n_true": 109,
+     "mae": 6.5130952380952385,
+     "within_10min": 0.8095238095238095
+    }
+   },
+   "RADIOGRAPHY": {
+    "n": 658,
+    "risk30": {
+     "positives": 68,
+     "precision": 0.22556390977443608,
+     "recall": 0.4411764705882353,
+     "f1": 0.29850746268656714,
+     "false_negatives": 38,
+     "false_positives": 103
+    },
+    "gas_macro_f1": 0.23769964398150692,
+    "time": {
+     "n_true": 76,
+     "mae": 5.8765625,
+     "within_10min": 0.78125
+    }
+   },
+   "SCAFFOLDING": {
+    "n": 579,
+    "risk30": {
+     "positives": 38,
+     "precision": 0.15555555555555556,
+     "recall": 0.5526315789473685,
+     "f1": 0.24277456647398843,
+     "false_negatives": 17,
+     "false_positives": 114
+    },
+    "gas_macro_f1": 0.2276654493631424,
+    "time": {
+     "n_true": 63,
+     "mae": 15.936666666666667,
+     "within_10min": 0.16666666666666666
+    }
+   }
+  },
+  "by_task_state": {
+   "PRE_WORK": {
+    "n": 583,
+    "risk30": {
+     "positives": 102,
+     "precision": 0.0,
+     "recall": 0.0,
+     "f1": 0.0,
+     "false_negatives": 102,
+     "false_positives": 0
+    },
+    "gas_macro_f1": 0.14429312581063555,
+    "time": {
+     "n_true": 138
+    }
+   },
+   "RECOVERY": {
+    "n": 1923,
+    "risk30": {
+     "positives": 17,
+     "precision": 0.05947955390334572,
+     "recall": 0.9411764705882353,
+     "f1": 0.11188811188811189,
+     "false_negatives": 1,
+     "false_positives": 253
+    },
+    "gas_macro_f1": 0.20934688507553734,
+    "time": {
+     "n_true": 17,
+     "mae": 1.0343749999999998,
+     "within_10min": 1.0
+    }
+   },
+   "WORK": {
+    "n": 7341,
+    "risk30": {
+     "positives": 1562,
+     "precision": 0.23692587539790813,
+     "recall": 0.33354673495518566,
+     "f1": 0.2770539750066472,
+     "false_negatives": 1041,
+     "false_positives": 1678
+    },
+    "gas_macro_f1": 0.3268565844752336,
+    "time": {
+     "n_true": 1715,
+     "mae": 8.062603648424544,
+     "within_10min": 0.7346600331674958
+    }
+   }
+  },
+  "false_alarm": {
+   "normal_episodes": 113,
+   "windows_in_normal_episodes": 7227,
+   "window_false_alarm_rate": 0.3183893731838937,
+   "window_imminent_false_alarm_rate": 0.24463816244638162,
+   "episode_false_alarm_rate": 0.5752212389380531,
+   "window_false_alarm_rate_y60_negative": 0.3155321549454682
+  },
+  "lead_time": {
+   "episodes_with_exceed": 78,
+   "detected_before_exceed": 76,
+   "mean_lead_min_all": 8.442307692307692,
+   "mean_lead_min_detected": 8.664473684210526,
+   "median_lead_min_detected": 5.125
+  },
+  "lead_time_imminent_only": {
+   "episodes_with_exceed": 78,
+   "detected_before_exceed": 75,
+   "mean_lead_min_all": 7.907051282051282,
+   "mean_lead_min_detected": 8.223333333333333,
+   "median_lead_min_detected": 4.75
+  }
+ },
+ "baseline_5m": {
+  "n_windows": 9847,
+  "recall_by_true_mtt": {
+   "0-5min": {
+    "n": 365,
+    "recall": 0.8191780821917808
+   },
+   "5-10min": {
+    "n": 363,
+    "recall": 0.38292011019283745
+   },
+   "10-15min": {
+    "n": 337,
+    "recall": 0.27002967359050445
+   },
+   "15-20min": {
+    "n": 279,
+    "recall": 0.1827956989247312
+   },
+   "20-25min": {
+    "n": 209,
+    "recall": 0.0861244019138756
+   },
+   "25-30min": {
+    "n": 128,
+    "recall": 0.125
+   }
+  },
+  "recall_by_trend_visibility": {
+   "positives_trend_visible": 597,
+   "positives_trend_not_visible": 1084,
+   "recall_trend_visible": 0.7772194304857621,
+   "recall_trend_not_visible": 0.13837638376383765
+  },
+  "risk30": {
+   "threshold": 0.5,
+   "n": 9847,
+   "positives": 1681,
+   "precision": 0.2455017992802879,
+   "recall": 0.3652587745389649,
+   "f1": 0.2936394069823051,
+   "confusion_matrix": {
+    "tn": 6279,
+    "fp": 1887,
+    "fn": 1067,
+    "tp": 614
+   },
+   "false_negatives": 1067,
+   "false_positives": 1887,
+   "pr_auc": 0.19940294472357944,
+   "roc_auc": 0.5513362816734206,
+   "brier": 0.30444384063524643
+  },
+  "risk60_from_state": {
+   "threshold": 0.5,
+   "n": 9847,
+   "positives": 1870,
+   "precision": 0.2169840774274118,
+   "recall": 0.3716577540106952,
+   "f1": 0.27399960575596294,
+   "confusion_matrix": {
+    "tn": 5469,
+    "fp": 2508,
+    "fn": 1175,
+    "tp": 695
+   },
+   "false_negatives": 1175,
+   "false_positives": 2508,
+   "pr_auc": 0.19996949782187623,
+   "roc_auc": 0.5286269213829331,
+   "brier": 0.37402254493754444
+  },
+  "gas": {
+   "n": 9847,
+   "accuracy": 0.6221184116989946,
+   "macro_f1_all": 0.33367361188860056,
+   "macro_f1_gases_only": 0.2507879252655683,
+   "none_share": 0.810094445008632,
+   "per_class": {
+    "O2": {
+     "precision": 0.21975308641975308,
+     "recall": 0.3852813852813853,
+     "f1": 0.279874213836478,
+     "support": 462
+    },
+    "LEL": {
+     "precision": 0.18821603927986907,
+     "recall": 0.36163522012578614,
+     "f1": 0.24757804090419805,
+     "support": 318
+    },
+    "CO": {
+     "precision": 0.15245009074410162,
+     "recall": 0.24347826086956523,
+     "f1": 0.1875,
+     "support": 345
+    },
+    "H2S": {
+     "precision": 0.11647254575707154,
+     "recall": 0.2713178294573643,
+     "f1": 0.1629802095459837,
+     "support": 258
+    },
+    "CO2": {
+     "precision": 0.3333333333333333,
+     "recall": 0.43121149897330596,
+     "f1": 0.37600716204118173,
+     "support": 487
+    },
+    "NONE": {
+     "precision": 0.8231487055990367,
+     "recall": 0.6855960887551711,
+     "f1": 0.7481020450037618,
+     "support": 7977
+    }
+   },
+   "confusion_matrix": {
+    "labels": [
+     "O2",
+     "LEL",
+     "CO",
+     "H2S",
+     "CO2",
+     "NONE"
+    ],
+    "rows_true_cols_pred": [
+     [
+      178,
+      7,
+      0,
+      1,
+      0,
+      276
+     ],
+     [
+      0,
+      115,
+      0,
+      0,
+      0,
+      203
+     ],
+     [
+      0,
+      0,
+      84,
+      29,
+      0,
+      232
+     ],
+     [
+      0,
+      1,
+      0,
+      70,
+      0,
+      187
+     ],
+     [
+      0,
+      0,
+      0,
+      0,
+      210,
+      277
+     ],
+     [
+      632,
+      488,
+      467,
+      501,
+      420,
+      5469
+     ]
+    ]
+   },
+   "classes_present": [
+    "O2",
+    "LEL",
+    "CO",
+    "H2S",
+    "CO2",
+    "NONE"
+   ]
+  },
+  "time": {
+   "n_true": 1870,
+   "n_predicted": 695,
+   "coverage": 0.3716577540106952,
+   "mae": 7.181079136690648,
+   "median_ae": 3.0500000000000007,
+   "rmse": 12.449985553717312,
+   "within_5min": 0.6244604316546762,
+   "within_10min": 0.7755395683453238,
+   "bias": -0.15949640287769778
+  },
+  "time_per_gas": {
+   "O2": {
+    "n_true": 462,
+    "n_predicted": 186,
+    "mae": 7.733602150537633,
+    "median_ae": 4.1,
+    "within_5min": 0.5698924731182796,
+    "within_10min": 0.7258064516129032
+   },
+   "LEL": {
+    "n_true": 318,
+    "n_predicted": 115,
+    "mae": 12.299565217391306,
+    "median_ae": 5.65,
+    "within_5min": 0.45217391304347826,
+    "within_10min": 0.6608695652173913
+   },
+   "CO": {
+    "n_true": 345,
+    "n_predicted": 113,
+    "mae": 5.8353982300884955,
+    "median_ae": 2.8,
+    "within_5min": 0.6017699115044248,
+    "within_10min": 0.7964601769911505
+   },
+   "H2S": {
+    "n_true": 258,
+    "n_predicted": 71,
+    "mae": 6.209154929577465,
+    "median_ae": 1.35,
+    "within_5min": 0.7887323943661971,
+    "within_10min": 0.8450704225352113
+   },
+   "CO2": {
+    "n_true": 487,
+    "n_predicted": 210,
+    "mae": 4.941428571428571,
+    "median_ae": 2.0999999999999996,
+    "within_5min": 0.7238095238095238,
+    "within_10min": 0.8476190476190476
+   }
+  },
+  "forecast_state": {
+   "accuracy": 0.6182593683355336,
+   "per_state": {
+    "STABLE": {
+     "precision": 0.8231487055990367,
+     "recall": 0.6855960887551711,
+     "f1": 0.7481020450037618,
+     "support": 7977
+    },
+    "WATCH": {
+     "precision": 0.007122507122507123,
+     "recall": 0.026455026455026454,
+     "f1": 0.01122334455667789,
+     "support": 189
+    },
+    "IMMINENT": {
+     "precision": 0.2455017992802879,
+     "recall": 0.3652587745389649,
+     "f1": 0.2936394069823051,
+     "support": 1681
+    }
+   },
+   "confusion_matrix": {
+    "labels": [
+     "STABLE",
+     "WATCH",
+     "IMMINENT"
+    ],
+    "rows_true_cols_pred": [
+     [
+      5469,
+      654,
+      1854
+     ],
+     [
+      151,
+      5,
+      33
+     ],
+     [
+      1024,
+      43,
+      614
+     ]
+    ]
+   }
+  },
+  "by_task_type": {
+   "BARGE_WORK": {
+    "n": 669,
+    "risk30": {
+     "positives": 117,
+     "precision": 0.26153846153846155,
+     "recall": 0.2905982905982906,
+     "f1": 0.27530364372469635,
+     "false_negatives": 83,
+     "false_positives": 96
+    },
+    "gas_macro_f1": 0.3087813693780566,
+    "time": {
+     "n_true": 117,
+     "mae": 3.551428571428571,
+     "within_10min": 0.8857142857142857
+    }
+   },
+   "COMMISSIONING": {
+    "n": 1222,
+    "risk30": {
+     "positives": 196,
+     "precision": 0.24299065420560748,
+     "recall": 0.3979591836734694,
+     "f1": 0.30174081237911027,
+     "false_negatives": 118,
+     "false_positives": 243
+    },
+    "gas_macro_f1": 0.33070448520089485,
+    "time": {
+     "n_true": 208,
+     "mae": 4.972289156626506,
+     "within_10min": 0.8674698795180723
+    }
+   },
+   "ELECTRICAL": {
+    "n": 656,
+    "risk30": {
+     "positives": 83,
+     "precision": 0.26356589147286824,
+     "recall": 0.40963855421686746,
+     "f1": 0.32075471698113206,
+     "false_negatives": 49,
+     "false_positives": 95
+    },
+    "gas_macro_f1": 0.30197538548502273,
+    "time": {
+     "n_true": 88,
+     "mae": 6.6054054054054046,
+     "within_10min": 0.8648648648648649
+    }
+   },
+   "FLUID_SUPPLY": {
+    "n": 1284,
+    "risk30": {
+     "positives": 273,
+     "precision": 0.23903508771929824,
+     "recall": 0.3992673992673993,
+     "f1": 0.299039780521262,
+     "false_negatives": 164,
+     "false_positives": 347
+    },
+    "gas_macro_f1": 0.2911141517244846,
+    "time": {
+     "n_true": 295,
+     "mae": 5.693644067796609,
+     "within_10min": 0.8728813559322034
+    }
+   },
+   "HEAVY_LIFTING": {
+    "n": 679,
+    "risk30": {
+     "positives": 153,
+     "precision": 0.3137254901960784,
+     "recall": 0.41830065359477125,
+     "f1": 0.3585434173669468,
+     "false_negatives": 89,
+     "false_positives": 140
+    },
+    "gas_macro_f1": 0.2670504168021876,
+    "time": {
+     "n_true": 193,
+     "mae": 7.170588235294118,
+     "within_10min": 0.7352941176470589
+    }
+   },
+   "HOT_WORK": {
+    "n": 1291,
+    "risk30": {
+     "positives": 266,
+     "precision": 0.2872628726287263,
+     "recall": 0.39849624060150374,
+     "f1": 0.33385826771653543,
+     "false_negatives": 160,
+     "false_positives": 263
+    },
+    "gas_macro_f1": 0.27678004919904425,
+    "time": {
+     "n_true": 299,
+     "mae": 5.540086206896553,
+     "within_10min": 0.8103448275862069
+    }
+   },
+   "NONE": {
+    "n": 285,
+    "risk30": {
+     "positives": 25,
+     "precision": 0.0,
+     "recall": 0.0,
+     "f1": 0.0,
+     "false_negatives": 25,
+     "false_positives": 0
+    },
+    "gas_macro_f1": 0.1574074074074074,
+    "time": {
+     "n_true": 25
+    }
+   },
+   "OTHER": {
+    "n": 955,
+    "risk30": {
+     "positives": 127,
+     "precision": 0.13157894736842105,
+     "recall": 0.2755905511811024,
+     "f1": 0.178117048346056,
+     "false_negatives": 92,
+     "false_positives": 231
+    },
+    "gas_macro_f1": 0.2883475788345291,
+    "time": {
+     "n_true": 157,
+     "mae": 16.448333333333334,
+     "within_10min": 0.5
+    }
+   },
+   "PAINTING_CLEANING": {
+    "n": 895,
+    "risk30": {
+     "positives": 226,
+     "precision": 0.33532934131736525,
+     "recall": 0.24778761061946902,
+     "f1": 0.28498727735368956,
+     "false_negatives": 170,
+     "false_positives": 111
+    },
+    "gas_macro_f1": 0.34772334813318423,
+    "time": {
+     "n_true": 240,
+     "mae": 7.125396825396826,
+     "within_10min": 0.8253968253968254
+    }
+   },
+   "PRESSURE_TEST": {
+    "n": 674,
+    "risk30": {
+     "positives": 109,
+     "precision": 0.22872340425531915,
+     "recall": 0.3944954128440367,
+     "f1": 0.2895622895622896,
+     "false_negatives": 66,
+     "false_positives": 145
+    },
+    "gas_macro_f1": 0.26716258380481256,
+    "time": {
+     "n_true": 109,
+     "mae": 6.068367346938776,
+     "within_10min": 0.8571428571428571
+    }
+   },
+   "RADIOGRAPHY": {
+    "n": 658,
+    "risk30": {
+     "positives": 68,
+     "precision": 0.24444444444444444,
+     "recall": 0.4852941176470588,
+     "f1": 0.3251231527093596,
+     "false_negatives": 35,
+     "false_positives": 102
+    },
+    "gas_macro_f1": 0.24817475005688885,
+    "time": {
+     "n_true": 76,
+     "mae": 5.501428571428572,
+     "within_10min": 0.8
+    }
+   },
+   "SCAFFOLDING": {
+    "n": 579,
+    "risk30": {
+     "positives": 38,
+     "precision": 0.16176470588235295,
+     "recall": 0.5789473684210527,
+     "f1": 0.25287356321839083,
+     "false_negatives": 16,
+     "false_positives": 114
+    },
+    "gas_macro_f1": 0.2246376811594203,
+    "time": {
+     "n_true": 63,
+     "mae": 15.53709677419355,
+     "within_10min": 0.16129032258064516
+    }
+   }
+  },
+  "by_task_state": {
+   "PRE_WORK": {
+    "n": 583,
+    "risk30": {
+     "positives": 102,
+     "precision": 0.0,
+     "recall": 0.0,
+     "f1": 0.0,
+     "false_negatives": 102,
+     "false_positives": 0
+    },
+    "gas_macro_f1": 0.15420213927090154,
+    "time": {
+     "n_true": 138,
+     "mae": 20.925,
+     "within_10min": 0.0
+    }
+   },
+   "RECOVERY": {
+    "n": 1923,
+    "risk30": {
+     "positives": 17,
+     "precision": 0.06477732793522267,
+     "recall": 0.9411764705882353,
+     "f1": 0.12121212121212122,
+     "false_negatives": 1,
+     "false_positives": 231
+    },
+    "gas_macro_f1": 0.20125824357299735,
+    "time": {
+     "n_true": 17,
+     "mae": 1.2843749999999998,
+     "within_10min": 1.0
+    }
+   },
+   "WORK": {
+    "n": 7341,
+    "risk30": {
+     "positives": 1562,
+     "precision": 0.2653061224489796,
+     "recall": 0.382842509603073,
+     "f1": 0.31341719077568136,
+     "false_negatives": 964,
+     "false_positives": 1656
+    },
+    "gas_macro_f1": 0.34681223649748444,
+    "time": {
+     "n_true": 1715,
+     "mae": 7.279837518463812,
+     "within_10min": 0.7725258493353028
+    }
+   }
+  },
+  "false_alarm": {
+   "normal_episodes": 113,
+   "windows_in_normal_episodes": 7227,
+   "window_false_alarm_rate": 0.31921959319219595,
+   "window_imminent_false_alarm_rate": 0.23951847239518473,
+   "episode_false_alarm_rate": 0.7256637168141593,
+   "window_false_alarm_rate_y60_negative": 0.31440391124482886
+  },
+  "lead_time": {
+   "episodes_with_exceed": 78,
+   "detected_before_exceed": 77,
+   "mean_lead_min_all": 10.35897435897436,
+   "mean_lead_min_detected": 10.493506493506494,
+   "median_lead_min_detected": 6.5
+  },
+  "lead_time_imminent_only": {
+   "episodes_with_exceed": 78,
+   "detected_before_exceed": 77,
+   "mean_lead_min_all": 8.884615384615385,
+   "mean_lead_min_detected": 9.0,
+   "median_lead_min_detected": 5.5
+  }
+ }
+}

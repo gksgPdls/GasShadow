@@ -1,0 +1,168 @@
+/* Main layout, content, controls and handlers stay in place.
+   These scoped rules change surface treatment only. Navigation/semantic tokens stay original. */
+.minimal-app { background: #fff; }
+.minimal-app main { min-width: 0; background: #fff; }
+.minimal-today { padding: 0; gap: 0; }
+.minimal-today > section { min-width: 0; border: 0; border-radius: 0; box-shadow: none; }
+.minimal-today > section + section { border-left: 1px solid var(--border); }
+/* 왼쪽 구역 상세·출입현황: 3D 위에 겹쳐 왼쪽에서 밀려 나온다 (3D 크기는 그대로) */
+@media (min-width: 1101px) {
+  .minimal-today > .minimal-side { position: absolute; top: 0; bottom: 0; left: 0; z-index: 6; width: 420px; border-right: 1px solid var(--border); box-shadow: 6px 0 18px rgb(16 24 40 / 0.06); animation: side-in 0.32s cubic-bezier(.2,.8,.3,1) both; }
+  .minimal-today > .minimal-side + section { border-left: 0; }
+  /* 창이 덮는 동안 3D 왼쪽 위 공정 바로가기·왼쪽 아래 센서 수신은 창 옆으로 비킨다 */
+  .minimal-today:has(> .minimal-side) .b3-bar { left: 432px; transition: left 0.32s cubic-bezier(.2,.8,.3,1); }
+  .minimal-today:has(> .minimal-side) .b3-info { left: 432px; }
+}
+@keyframes side-in { from { transform: translateX(-24px); opacity: 0 } to { transform: none; opacity: 1 } }
+@media (prefers-reduced-motion: reduce) { .minimal-today > .minimal-side { animation: none; } }
+.minimal-app main :is(section, article).rounded-xl { border-radius: 0; box-shadow: none; }
+.minimal-app main:not(.minimal-today) :is(section, article).rounded-xl { border-color: transparent; }
+.minimal-app main :where(button, input, textarea, select) { border-radius: 4px; }
+.minimal-app main .text-\[28px\] { font-size: 24px; }
+.minimal-app main .text-\[32px\] { font-size: 26px; }
+.minimal-app main :is(.rounded-xl, .rounded-2xl) { border-radius: 4px; }
+.minimal-app main :is(.shadow-sm, .shadow-md, .shadow-lg) { box-shadow: none; }
+
+/* 경보 배너: 3D 위에 알림처럼 한 장씩 따로 (사이 간격 · 각자 테두리와 그림자 · 위에서 내려오며 나타남) */
+@keyframes alert-in { from { opacity: 0; transform: translateY(-6px) } to { opacity: 1; transform: none } }
+.minimal-alerts { gap: 8px; border: 0; background: transparent; padding: 2px 2px 8px; }
+.minimal-alert {
+  border: 1px solid var(--border); border-radius: 8px; background: #fff; padding: 12px 14px;
+  box-shadow: 0 6px 16px rgb(16 24 40 / 0.08), 0 1px 2px rgb(16 24 40 / 0.05);
+  animation: alert-in 0.3s ease-out both;
+}
+.minimal-alert:nth-child(2) { animation-delay: 0.06s; }
+.minimal-alert:nth-child(3) { animation-delay: 0.12s; }
+.minimal-alert > .absolute.inset-y-0 { display: none; }
+.minimal-alert .minimal-alert-chip { border-radius: 4px; } /* 상태 칩은 옅은 바탕 그대로 (모서리만 각지게) */
+.minimal-alerts > button:not(.minimal-alert) { margin: 0 2px; }
+.minimal-alert [class*="ring-"] { outline-offset: -2px; }
+
+/* The original assistant keeps its greeting, six shortcuts, conversation and approval flow. */
+.minimal-agent > header { height: 72px; padding-inline: 16px 20px; }
+.minimal-agent > header h2 { font-size: 18px; }
+.minimal-agent > header > span:first-child { background: transparent; color: var(--foreground); width: auto; height: auto; }
+.minimal-agent-note { padding: 14px 0; border: 0; border-bottom: 1px solid var(--border); border-radius: 0; background: transparent; }
+.minimal-agent-note:hover { background: #f8f9fa; }
+.minimal-agent-question { justify-content: flex-start; padding-top: 12px; border-top: 1px solid var(--border); }
+.minimal-agent-question > div { max-width: 100%; border-radius: 0; background: transparent; padding: 0; color: var(--foreground); font-weight: 600; }
+.minimal-agent-reply > div { border-radius: 0; background: transparent; padding: 0 0 12px; line-height: 1.8; }
+.minimal-agent .rounded-xl { border-radius: 4px; }
+
+/* Original zone inspection remains the left column. */
+.minimal-today > section:not(.minimal-board):not(.minimal-agent) > header { height: 52px; }
+.minimal-today > section:not(.minimal-board):not(.minimal-agent) h2 { font-size: 23px; }
+.minimal-today > section:not(.minimal-board):not(.minimal-agent) .text-\[44px\] { font-size: 36px; }
+.minimal-today > section:not(.minimal-board):not(.minimal-agent) .rounded-full { border-radius: 4px; }
+.minimal-today > section:not(.minimal-board):not(.minimal-agent) .border-2 { border-width: 1px; }
+.minimal-board .b3-bar .seg { border-radius: 4px; box-shadow: none; }
+.minimal-board .b3-bar .seg button { border-radius: 3px; }
+.minimal-board .group > span, .minimal-board [class*="bg-white/"] { border-radius: 4px; box-shadow: none; }
+
+/* Original preparation counts/filter actions: text summaries, without separate tiles. */
+.minimal-prep-summary { border-bottom: 1px solid var(--border); padding-bottom: 16px; }
+.minimal-prep-summary > * { border: 0; border-radius: 0; background: transparent; padding: 0; box-shadow: none; }
+.minimal-prep-summary > button > span:first-child { display: none; }
+.minimal-prep-summary .text-\[40px\] { font-size: 26px; }
+.minimal-prep-summary .text-\[32px\] { font-size: 26px; }
+.minimal-prep-summary .text-\[18px\] { font-size: 14px; }
+.minimal-prep-summary .text-\[15px\] { font-size: 13px; }
+.minimal-prep-summary .text-\[14px\] { font-size: 12px; }
+.minimal-app main :where(button, input, textarea, select, summary):focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; }
+.minimal-app main ::selection { background: #dce7f5; }
+.minimal-app main { scrollbar-color: #bfc8d2 transparent; scrollbar-width: thin; }
+
+/* Narrow screens stack the same panels; desktop order and widths are retained. */
+@media (max-width: 1279px) {
+  .minimal-app { height: auto; }
+  .minimal-app > header { overflow-x: auto; }
+  .minimal-app > header > button, .minimal-app > header > nav, .minimal-app > header > div { flex-shrink: 0; }
+}
+@media (max-width: 1100px) {
+  .minimal-today { grid-template-columns: minmax(0,1fr); }
+  .minimal-today > section { min-height: 500px; }
+  .minimal-today > .minimal-agent { min-height: 660px; max-height: 820px; }
+  .minimal-agent-intro { padding-top: 24px; }
+  .minimal-today > section + section { border-left: 0; border-top: 1px solid var(--border); }
+}
+@media (max-width: 900px) {
+  .minimal-prep-summary { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .minimal-app main:not(.minimal-today) > .h-16 { height: auto; min-height: 64px; flex-wrap: wrap; padding-block: 8px; }
+  .minimal-app main:not(.minimal-today) > .h-16 > .ml-auto { flex-wrap: wrap; white-space: normal; font-size: 13px; }
+  .minimal-prep-summary + .grid { grid-template-columns: minmax(0,1fr); }
+  .minimal-app main:not(.minimal-today) footer { height: auto; min-height: 76px; flex-wrap: wrap; padding-block: 12px; }
+}
+@media (max-width: 480px) {
+  .minimal-prep-summary { grid-template-columns: minmax(0,1fr); }
+  .minimal-prep-summary > * { padding: 8px 0; }
+  .minimal-agent > header { padding-inline: 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .minimal-app main *, .minimal-app main *::before, .minimal-app main *::after { animation: none !important; transition-duration: 0s !important; scroll-behavior: auto !important; }
+}
+
+/* Keep the original legend and receipt caption separate in the original three-column detail view. */
+.minimal-board { container-type: inline-size; container-name: main-scene; }
+@container main-scene (max-width: 920px) {
+  .minimal-board .absolute.right-3.bottom-3 { bottom: 52px; max-width: calc(100% - 24px); flex-wrap: wrap; gap: 6px 12px; font-size: 11.5px; }
+}
+
+/* Keep the original evidence/decision sections, presented as flat grouped rows. */
+.minimal-app .minimal-finding { border: 0; border-top: 1px solid var(--border); border-radius: 0; background: transparent; padding: 16px 0; }
+.minimal-finding > div:first-child > span:first-child { padding-left: 0; border-radius: 0; }
+.minimal-finding > div:first-child > span:first-child.bg-warn { background: transparent; color: var(--warn-ink); }
+.minimal-finding > div:first-child > span:last-child { border-radius: 0; padding-right: 0; background: transparent; }
+.minimal-finding > div:first-child > span:last-child.bg-primary { color: var(--primary); }
+.minimal-finding > p.text-\[17px\] { font-size: 16px; }
+.minimal-app .minimal-zone-reading { padding-inline: 0; border-radius: 0; background: transparent; }
+.minimal-app .minimal-zone-reading.bg-legal-soft { padding-inline: 12px; background: var(--legal-bg); }
+
+/* 에이전트 팀 분석 카드 */
+@keyframes agent-pulse { 0%, 100% { box-shadow: 0 0 0 0 rgb(15 27 45 / 0.35) } 50% { box-shadow: 0 0 0 4px rgb(15 27 45 / 0) } }
+@keyframes agent-shimmer { 0% { background-position: 100% 0 } 100% { background-position: -100% 0 } }
+@keyframes agent-in { from { opacity: 0; transform: translateY(3px) } to { opacity: 1; transform: none } }
+.agent-run-pulse { animation: agent-pulse 1.2s ease-in-out infinite; }
+.agent-shimmer {
+  background: linear-gradient(90deg, currentColor 40%, rgb(15 27 45 / 0.35) 50%, currentColor 60%) 0 0 / 200% 100%;
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  animation: agent-shimmer 1.6s linear infinite;
+}
+.agent-in { animation: agent-in 0.35s ease-out both; }
+@media (prefers-reduced-motion: reduce) { .agent-run-pulse, .agent-shimmer, .agent-in { animation: none; } }
+
+/* 모든 화면 공통 색 톤: 차분한 청록·회녹 계열. body에 두어 탭 내용·대화창·시트·알림이 모두 같은 색을 쓴다.
+   3D는 :root(html) 색을 읽으므로 그대로, 위쪽 네비의 남색(--navy)은 body에서 바꾸지 않는다 */
+body {
+  --background: #f5f7f6;
+  --foreground: #1d3033;
+  --card: #ffffff;
+  --card-foreground: #1d3033;
+  --primary: #2a6670;
+  --primary-foreground: #ffffff;
+  --accent: #e9f2f1;
+  --accent-foreground: #285c63;
+  --muted: #f0f4f3;
+  --muted-foreground: #637579;
+  --border: #dde6e3;
+  --input: #dde6e3;
+  --ring: #2a6670;
+  --warn: #a87948;
+  --warn-bg: #f8f1e8;
+  --warn-ink: #875c30;
+  --legal: #b65e54;
+  --legal-bg: #faefed;
+  --unauth: #8d5a83;
+  --unauth-bg: #f5eef3;
+  --missing: #66699f;
+  --missing-bg: #eff0f6;
+  --ok: #347562;
+  --ok-bg: #eaf4ee;
+  --idle: #c3cdca;
+  color: var(--foreground);
+}
+.minimal-app main { --navy: #2a6670; } /* 탭 내용 안에서 쓰는 남색 강조(말풍선·단계 표시)도 청록으로 */
+body ::selection { background: #d6e8e5; }
+/* 글꼴: 제목용 Host Grotesk 대신 모든 글씨를 Pretendard로 (로고 글자만 예외) */
+body .font-heading:not(.brand-font) { font-family: var(--font-sans); }
+.minimal-today .minimal-agent-note:hover { background: var(--accent); }
+.minimal-today .agent-shimmer { background-image: linear-gradient(90deg, currentColor 40%, rgb(42 102 112 / 0.35) 50%, currentColor 60%); }

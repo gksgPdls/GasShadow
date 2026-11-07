@@ -1,0 +1,1117 @@
+{
+ "candidates": {
+  "risk60": {
+   "LogisticRegression": {
+    "threshold": 0.5761,
+    "n": 9525,
+    "positives": 1259,
+    "precision": 0.3462179273575475,
+    "recall": 0.8252581413820492,
+    "f1": 0.4877934272300469,
+    "confusion_matrix": {
+     "tn": 6304,
+     "fp": 1962,
+     "fn": 220,
+     "tp": 1039
+    },
+    "false_negatives": 220,
+    "false_positives": 1962,
+    "pr_auc": 0.4899007088940085,
+    "roc_auc": 0.8677017369447599,
+    "brier": 0.16403366056402546,
+    "threshold_rule": "recall>=0.8 조건에서 F1 최대 (F1=0.488)",
+    "fit_seconds": 3.6,
+    "tradeoff": [
+     {
+      "target_recall": 0.95,
+      "recall": 0.9507545671167593,
+      "precision": 0.2908869987849332,
+      "threshold": 0.34680588865604006,
+      "flagged_fraction": 0.43202099737532806,
+      "f1": 0.4454782285076293
+     },
+     {
+      "target_recall": 0.9,
+      "recall": 0.9007148530579825,
+      "precision": 0.32179341657207716,
+      "threshold": 0.4665857814508183,
+      "flagged_fraction": 0.36997375328083987,
+      "f1": 0.474179385323019
+     },
+     {
+      "target_recall": 0.85,
+      "recall": 0.8506751389992058,
+      "precision": 0.34021601016518427,
+      "threshold": 0.5453886309004643,
+      "flagged_fraction": 0.330498687664042,
+      "f1": 0.4860449285228047
+     },
+     {
+      "target_recall": 0.8,
+      "recall": 0.8006354249404289,
+      "precision": 0.3506086956521739,
+      "threshold": 0.597731849344787,
+      "flagged_fraction": 0.30183727034120733,
+      "f1": 0.4876632801161104
+     },
+     {
+      "target_recall": 0.75,
+      "recall": 0.7505957108816521,
+      "precision": 0.35876993166287013,
+      "threshold": 0.6424729335923121,
+      "flagged_fraction": 0.27653543307086614,
+      "f1": 0.485486771127665
+     },
+     {
+      "target_recall": 0.7,
+      "recall": 0.7005559968228753,
+      "precision": 0.36872909698996653,
+      "threshold": 0.6765021138813858,
+      "flagged_fraction": 0.2511286089238845,
+      "f1": 0.4831552999178308
+     },
+     {
+      "target_recall": 0.6,
+      "recall": 0.6004765687053217,
+      "precision": 0.38868894601542414,
+      "threshold": 0.7323587700403793,
+      "flagged_fraction": 0.2041994750656168,
+      "f1": 0.4719101123595506
+     },
+     {
+      "target_recall": 0.5,
+      "recall": 0.5003971405877681,
+      "precision": 0.4106910039113429,
+      "threshold": 0.7768139483047859,
+      "flagged_fraction": 0.1610498687664042,
+      "f1": 0.45112781954887216
+     }
+    ]
+   },
+   "RandomForest": {
+    "threshold": 0.3597,
+    "n": 9525,
+    "positives": 1259,
+    "precision": 0.3324581555628487,
+    "recall": 0.8046068308181096,
+    "f1": 0.47050627032048303,
+    "confusion_matrix": {
+     "tn": 6232,
+     "fp": 2034,
+     "fn": 246,
+     "tp": 1013
+    },
+    "false_negatives": 246,
+    "false_positives": 2034,
+    "pr_auc": 0.4779088485870458,
+    "roc_auc": 0.8667302655335971,
+    "brier": 0.10020339206967097,
+    "threshold_rule": "recall>=0.8 조건에서 F1 최대 (F1=0.471)",
+    "fit_seconds": 42.8,
+    "tradeoff": [
+     {
+      "target_recall": 0.95,
+      "recall": 0.9507545671167593,
+      "precision": 0.2954096742349457,
+      "threshold": 0.20480296135985568,
+      "flagged_fraction": 0.4254068241469816,
+      "f1": 0.4507625682545659
+     },
+     {
+      "target_recall": 0.9,
+      "recall": 0.9007148530579825,
+      "precision": 0.30983606557377047,
+      "threshold": 0.27303009389158056,
+      "flagged_fraction": 0.384251968503937,
+      "f1": 0.4610693230331368
+     },
+     {
+      "target_recall": 0.85,
+      "recall": 0.8506751389992058,
+      "precision": 0.3202751196172249,
+      "threshold": 0.31917580453519984,
+      "flagged_fraction": 0.3510761154855643,
+      "f1": 0.4653486856398002
+     },
+     {
+      "target_recall": 0.8,
+      "recall": 0.8006354249404289,
+      "precision": 0.33355393778954334,
+      "threshold": 0.36270810872769266,
+      "flagged_fraction": 0.3172703412073491,
+      "f1": 0.47091800981079185
+     },
+     {
+      "target_recall": 0.75,
+      "recall": 0.7505957108816521,
+      "precision": 0.3523489932885906,
+      "threshold": 0.3937255730456885,
+      "flagged_fraction": 0.2815748031496063,
+      "f1": 0.4795737122557726
+     },
+     {
+      "target_recall": 0.7,
+      "recall": 0.7005559968228753,
+      "precision": 0.36872909698996653,
+      "threshold": 0.4187111375878762,
+      "flagged_fraction": 0.2511286089238845,
+      "f1": 0.4831552999178308
+     },
+     {
+      "target_recall": 0.6,
+      "recall": 0.6004765687053217,
+      "precision": 0.39150699119627136,
+      "threshold": 0.4554691897011468,
+      "flagged_fraction": 0.20272965879265092,
+      "f1": 0.47398119122257054
+     },
+     {
+      "target_recall": 0.5,
+      "recall": 0.5003971405877681,
+      "precision": 0.4147465437788018,
+      "threshold": 0.4921083971292643,
+      "flagged_fraction": 0.1594750656167979,
+      "f1": 0.4535637149028078
+     }
+    ]
+   },
+   "HistGradientBoosting": {
+    "threshold": 0.3199,
+    "n": 9525,
+    "positives": 1259,
+    "precision": 0.32751937984496127,
+    "recall": 0.8054011119936457,
+    "f1": 0.46567164179104475,
+    "confusion_matrix": {
+     "tn": 6184,
+     "fp": 2082,
+     "fn": 245,
+     "tp": 1014
+    },
+    "false_negatives": 245,
+    "false_positives": 2082,
+    "pr_auc": 0.4715448386424211,
+    "roc_auc": 0.8603127888109555,
+    "brier": 0.12373170045094321,
+    "threshold_rule": "recall>=0.8 조건에서 F1 최대 (F1=0.466)",
+    "fit_seconds": 27.9,
+    "tradeoff": [
+     {
+      "target_recall": 0.95,
+      "recall": 0.9507545671167593,
+      "precision": 0.27063079357901876,
+      "threshold": 0.06251120015360596,
+      "flagged_fraction": 0.4643569553805774,
+      "f1": 0.42133051742344246
+     },
+     {
+      "target_recall": 0.9,
+      "recall": 0.9007148530579825,
+      "precision": 0.2832875343492381,
+      "threshold": 0.12078926525883177,
+      "flagged_fraction": 0.42026246719160104,
+      "f1": 0.43101482326111745
+     },
+     {
+      "target_recall": 0.85,
+      "recall": 0.8506751389992058,
+      "precision": 0.31179039301310046,
+      "threshold": 0.24300663428817457,
+      "flagged_fraction": 0.3606299212598425,
+      "f1": 0.45632722624627187
+     },
+     {
+      "target_recall": 0.8,
+      "recall": 0.8006354249404289,
+      "precision": 0.33016704880445463,
+      "threshold": 0.32921776577270734,
+      "flagged_fraction": 0.3205249343832021,
+      "f1": 0.4675324675324676
+     },
+     {
+      "target_recall": 0.75,
+      "recall": 0.7505957108816521,
+      "precision": 0.34514243973703435,
+      "threshold": 0.40097689783862195,
+      "flagged_fraction": 0.2874540682414698,
+      "f1": 0.4728546409807356
+     },
+     {
+      "target_recall": 0.7,
+      "recall": 0.7005559968228753,
+      "precision": 0.3678065054211843,
+      "threshold": 0.4662464389001371,
+      "flagged_fraction": 0.251758530183727,
+      "f1": 0.48236259228876127
+     },
+     {
+      "target_recall": 0.6,
+      "recall": 0.6004765687053217,
+      "precision": 0.3993660855784469,
+      "threshold": 0.5655923850483924,
+      "flagged_fraction": 0.19874015748031496,
+      "f1": 0.4796954314720812
+     },
+     {
+      "target_recall": 0.5,
+      "recall": 0.5003971405877681,
+      "precision": 0.42,
+      "threshold": 0.6484479469959888,
+      "flagged_fraction": 0.15748031496062992,
+      "f1": 0.4566872055092425
+     }
+    ]
+   },
+   "LogisticRegression (선택, 보정 후)": {
+    "threshold": 0.2267,
+    "n": 9525,
+    "positives": 1259,
+    "precision": 0.34615384615384615,
+    "recall": 0.82922954725973,
+    "f1": 0.4884210526315789,
+    "confusion_matrix": {
+     "tn": 6294,
+     "fp": 1972,
+     "fn": 215,
+     "tp": 1044
+    },
+    "false_negatives": 215,
+    "false_positives": 1972,
+    "pr_auc": 0.47676634346338864,
+    "roc_auc": 0.8695890916156155,
+    "brier": 0.08517663401234035,
+    "threshold_rule": "recall>=0.8 조건에서 F1 최대 (F1=0.488)",
+    "tradeoff": [
+     {
+      "target_recall": 0.95,
+      "recall": 0.9682287529785544,
+      "precision": 0.2774237596722804,
+      "threshold": 0.07250755287009064,
+      "flagged_fraction": 0.46131233595800525,
+      "f1": 0.43127542897576504
+     },
+     {
+      "target_recall": 0.9,
+      "recall": 0.9245432883240667,
+      "precision": 0.3134931322380824,
+      "threshold": 0.13392857142857142,
+      "flagged_fraction": 0.3898162729658793,
+      "f1": 0.46822204344328233
+     },
+     {
+      "target_recall": 0.85,
+      "recall": 0.8784749801429707,
+      "precision": 0.3346444780635401,
+      "threshold": 0.2102803738317757,
+      "flagged_fraction": 0.34698162729658794,
+      "f1": 0.4846625766871166
+     },
+     {
+      "target_recall": 0.8,
+      "recall": 0.82922954725973,
+      "precision": 0.34615384615384615,
+      "threshold": 0.2388888888888889,
+      "flagged_fraction": 0.3166404199475066,
+      "f1": 0.488421052631579
+     },
+     {
+      "target_recall": 0.75,
+      "recall": 0.7950754567116759,
+      "precision": 0.35296191819464035,
+      "threshold": 0.2435064935064936,
+      "flagged_fraction": 0.297742782152231,
+      "f1": 0.4888888888888889
+     },
+     {
+      "target_recall": 0.7,
+      "recall": 0.7355043685464655,
+      "precision": 0.3662974683544304,
+      "threshold": 0.2732919254658385,
+      "flagged_fraction": 0.26540682414698163,
+      "f1": 0.48904145761816736
+     },
+     {
+      "target_recall": 0.6,
+      "recall": 0.659253375694996,
+      "precision": 0.3810835629017447,
+      "threshold": 0.2961876832844575,
+      "flagged_fraction": 0.22866141732283465,
+      "f1": 0.48297934244981094
+     },
+     {
+      "target_recall": 0.5,
+      "recall": 0.5790309769658459,
+      "precision": 0.396842678279804,
+      "threshold": 0.30689655172413793,
+      "flagged_fraction": 0.19286089238845144,
+      "f1": 0.47093023255813954
+     }
+    ]
+   }
+  },
+  "risk30": {
+   "LogisticRegression": {
+    "threshold": 0.5731,
+    "n": 9525,
+    "positives": 1172,
+    "precision": 0.32746359634270233,
+    "recall": 0.8250853242320819,
+    "f1": 0.46884848484848485,
+    "confusion_matrix": {
+     "tn": 6367,
+     "fp": 1986,
+     "fn": 205,
+     "tp": 967
+    },
+    "false_negatives": 205,
+    "false_positives": 1986,
+    "pr_auc": 0.49097491377610003,
+    "roc_auc": 0.8699015374909752,
+    "brier": 0.1624208124300674,
+    "threshold_rule": "recall>=0.8 조건에서 F1 최대 (F1=0.469)",
+    "fit_seconds": 3.0,
+    "tradeoff": [
+     {
+      "target_recall": 0.95,
+      "recall": 0.9505119453924915,
+      "precision": 0.26934235976789167,
+      "threshold": 0.34199354729807435,
+      "flagged_fraction": 0.4342257217847769,
+      "f1": 0.41974378296910325
+     },
+     {
+      "target_recall": 0.9,
+      "recall": 0.9001706484641638,
+      "precision": 0.29852857951329936,
+      "threshold": 0.46419903096831344,
+      "flagged_fraction": 0.3710236220472441,
+      "f1": 0.44836379090522743
+     },
+     {
+      "target_recall": 0.85,
+      "recall": 0.8506825938566553,
+      "precision": 0.3179209183673469,
+      "threshold": 0.5409766278251913,
+      "flagged_fraction": 0.329238845144357,
+      "f1": 0.4628597957288765
+     },
+     {
+      "target_recall": 0.8,
+      "recall": 0.8003412969283277,
+      "precision": 0.3330965909090909,
+      "threshold": 0.5966299741034355,
+      "flagged_fraction": 0.2956430446194226,
+      "f1": 0.47041123370110327
+     },
+     {
+      "target_recall": 0.75,
+      "recall": 0.75,
+      "precision": 0.3403019744483159,
+      "threshold": 0.6323868756982995,
+      "flagged_fraction": 0.2711811023622047,
+      "f1": 0.4681757656458055
+     },
+     {
+      "target_recall": 0.7,
+      "recall": 0.7005119453924915,
+      "precision": 0.35403191030616643,
+      "threshold": 0.6659049529659848,
+      "flagged_fraction": 0.24346456692913385,
+      "f1": 0.47035233457462045
+     },
+     {
+      "target_recall": 0.6,
+      "recall": 0.6006825938566553,
+      "precision": 0.3774798927613941,
+      "threshold": 0.7171907776528001,
+      "flagged_fraction": 0.1958005249343832,
+      "f1": 0.4636154099440237
+     },
+     {
+      "target_recall": 0.5,
+      "recall": 0.5,
+      "precision": 0.41065171688857743,
+      "threshold": 0.7664666429239478,
+      "flagged_fraction": 0.14981627296587927,
+      "f1": 0.45094267025779144
+     }
+    ]
+   },
+   "RandomForest": {
+    "threshold": 0.3271,
+    "n": 9525,
+    "positives": 1172,
+    "precision": 0.32866643332166606,
+    "recall": 0.8011945392491467,
+    "f1": 0.466120625465376,
+    "confusion_matrix": {
+     "tn": 6435,
+     "fp": 1918,
+     "fn": 233,
+     "tp": 939
+    },
+    "false_negatives": 233,
+    "false_positives": 1918,
+    "pr_auc": 0.4878413675885662,
+    "roc_auc": 0.8746319096488602,
+    "brier": 0.0916878452011875,
+    "threshold_rule": "recall>=0.8 조건에서 F1 최대 (F1=0.466)",
+    "fit_seconds": 41.8,
+    "tradeoff": [
+     {
+      "target_recall": 0.95,
+      "recall": 0.9505119453924915,
+      "precision": 0.27533366287691546,
+      "threshold": 0.18954229586204582,
+      "flagged_fraction": 0.4247769028871391,
+      "f1": 0.4269835185894979
+     },
+     {
+      "target_recall": 0.9,
+      "recall": 0.9001706484641638,
+      "precision": 0.28746594005449594,
+      "threshold": 0.24370726640055806,
+      "flagged_fraction": 0.38530183727034123,
+      "f1": 0.4357703428335399
+     },
+     {
+      "target_recall": 0.85,
+      "recall": 0.8506825938566553,
+      "precision": 0.29975947083583887,
+      "threshold": 0.28413310394854385,
+      "flagged_fraction": 0.34918635170603674,
+      "f1": 0.44330813694975546
+     },
+     {
+      "target_recall": 0.8,
+      "recall": 0.8003412969283277,
+      "precision": 0.329701230228471,
+      "threshold": 0.327699220560292,
+      "flagged_fraction": 0.29868766404199476,
+      "f1": 0.4670151854617874
+     },
+     {
+      "target_recall": 0.75,
+      "recall": 0.75,
+      "precision": 0.359803520261973,
+      "threshold": 0.3667100881316839,
+      "flagged_fraction": 0.2564829396325459,
+      "f1": 0.48630705394190876
+     },
+     {
+      "target_recall": 0.7,
+      "recall": 0.7005119453924915,
+      "precision": 0.38436329588014984,
+      "threshold": 0.39402494900787,
+      "flagged_fraction": 0.224251968503937,
+      "f1": 0.49637243047158414
+     },
+     {
+      "target_recall": 0.6,
+      "recall": 0.6006825938566553,
+      "precision": 0.3977401129943503,
+      "threshold": 0.42381419305385687,
+      "flagged_fraction": 0.1858267716535433,
+      "f1": 0.4785859959211421
+     },
+     {
+      "target_recall": 0.5,
+      "recall": 0.5,
+      "precision": 0.42007168458781363,
+      "threshold": 0.4581630473099879,
+      "flagged_fraction": 0.14645669291338584,
+      "f1": 0.4565640825866771
+     }
+    ]
+   },
+   "HistGradientBoosting": {
+    "threshold": 0.3235,
+    "n": 9525,
+    "positives": 1172,
+    "precision": 0.3228915662650602,
+    "recall": 0.8003412969283277,
+    "f1": 0.4601422614667648,
+    "confusion_matrix": {
+     "tn": 6386,
+     "fp": 1967,
+     "fn": 234,
+     "tp": 938
+    },
+    "false_negatives": 234,
+    "false_positives": 1967,
+    "pr_auc": 0.49110650953604423,
+    "roc_auc": 0.8685381680122284,
+    "brier": 0.11426177156284273,
+    "threshold_rule": "recall>=0.8 조건에서 F1 최대 (F1=0.460)",
+    "fit_seconds": 25.1,
+    "tradeoff": [
+     {
+      "target_recall": 0.95,
+      "recall": 0.9505119453924915,
+      "precision": 0.24646017699115044,
+      "threshold": 0.04708158340263664,
+      "flagged_fraction": 0.47454068241469816,
+      "f1": 0.3914265635980323
+     },
+     {
+      "target_recall": 0.9,
+      "recall": 0.9001706484641638,
+      "precision": 0.25985221674876846,
+      "threshold": 0.1033049445692185,
+      "flagged_fraction": 0.426246719160105,
+      "f1": 0.4032874617737003
+     },
+     {
+      "target_recall": 0.85,
+      "recall": 0.8506825938566553,
+      "precision": 0.2864119505889112,
+      "threshold": 0.20220547716075835,
+      "flagged_fraction": 0.3654593175853018,
+      "f1": 0.4285407264130668
+     },
+     {
+      "target_recall": 0.8,
+      "recall": 0.8003412969283277,
+      "precision": 0.3231140199793317,
+      "threshold": 0.3243651198324959,
+      "flagged_fraction": 0.3047769028871391,
+      "f1": 0.4603680981595092
+     },
+     {
+      "target_recall": 0.75,
+      "recall": 0.75,
+      "precision": 0.35995085995085996,
+      "threshold": 0.4242158649685112,
+      "flagged_fraction": 0.2563779527559055,
+      "f1": 0.48644161593801893
+     },
+     {
+      "target_recall": 0.7,
+      "recall": 0.7005119453924915,
+      "precision": 0.3915116833571769,
+      "threshold": 0.5012634625323483,
+      "flagged_fraction": 0.22015748031496063,
+      "f1": 0.5022942795962068
+     },
+     {
+      "target_recall": 0.6,
+      "recall": 0.6006825938566553,
+      "precision": 0.4230769230769231,
+      "threshold": 0.5845352976242255,
+      "flagged_fraction": 0.1746981627296588,
+      "f1": 0.49647390691114246
+     },
+     {
+      "target_recall": 0.5,
+      "recall": 0.5,
+      "precision": 0.44732824427480916,
+      "threshold": 0.6514410978204469,
+      "flagged_fraction": 0.13753280839895013,
+      "f1": 0.47219983883964545
+     }
+    ]
+   },
+   "LogisticRegression (선택, 보정 후)": {
+    "threshold": 0.1735,
+    "n": 9525,
+    "positives": 1172,
+    "precision": 0.307669616519174,
+    "recall": 0.8899317406143344,
+    "f1": 0.4572555896536607,
+    "confusion_matrix": {
+     "tn": 6006,
+     "fp": 2347,
+     "fn": 129,
+     "tp": 1043
+    },
+    "false_negatives": 129,
+    "false_positives": 2347,
+    "pr_auc": 0.4784788645553704,
+    "roc_auc": 0.8720888838859064,
+    "brier": 0.08031383550637813,
+    "threshold_rule": "recall>=0.8 조건에서 F1 최대 (F1=0.457)",
+    "tradeoff": [
+     {
+      "target_recall": 0.95,
+      "recall": 0.9701365187713311,
+      "precision": 0.2564854500338371,
+      "threshold": 0.0690846286701209,
+      "flagged_fraction": 0.46540682414698165,
+      "f1": 0.40570918822479923
+     },
+     {
+      "target_recall": 0.9,
+      "recall": 0.9223549488054608,
+      "precision": 0.29208322075114834,
+      "threshold": 0.12203389830508475,
+      "flagged_fraction": 0.3885564304461942,
+      "f1": 0.44366919761953627
+     },
+     {
+      "target_recall": 0.85,
+      "recall": 0.8899317406143344,
+      "precision": 0.307669616519174,
+      "threshold": 0.1735159817351598,
+      "flagged_fraction": 0.35590551181102364,
+      "f1": 0.45725558965366064
+     },
+     {
+      "target_recall": 0.8,
+      "recall": 0.8250853242320819,
+      "precision": 0.32757452574525747,
+      "threshold": 0.2054794520547945,
+      "flagged_fraction": 0.30992125984251967,
+      "f1": 0.4689621726479147
+     },
+     {
+      "target_recall": 0.75,
+      "recall": 0.7994880546075085,
+      "precision": 0.3339272986457591,
+      "threshold": 0.23060344827586207,
+      "flagged_fraction": 0.29459317585301836,
+      "f1": 0.4710910005027652
+     },
+     {
+      "target_recall": 0.7,
+      "recall": 0.7081911262798635,
+      "precision": 0.35439795046968403,
+      "threshold": 0.2365591397849462,
+      "flagged_fraction": 0.24587926509186353,
+      "f1": 0.4723961297666477
+     },
+     {
+      "target_recall": 0.6,
+      "recall": 0.6646757679180887,
+      "precision": 0.36624353549600375,
+      "threshold": 0.25945017182130575,
+      "flagged_fraction": 0.22330708661417323,
+      "f1": 0.4722643225219763
+     },
+     {
+      "target_recall": 0.5,
+      "recall": 0.5247440273037542,
+      "precision": 0.4105473965287049,
+      "threshold": 0.2917341977309562,
+      "flagged_fraction": 0.1572703412073491,
+      "f1": 0.46067415730337075
+     }
+    ]
+   }
+  },
+  "gas": {
+   "LogisticRegression": {
+    "n": 1259,
+    "accuracy": 0.5385226370135028,
+    "macro_f1_all": 0.44413166943698595,
+    "macro_f1_gases_only": 0.5329580033243831,
+    "none_share": 0.0,
+    "per_class": {
+     "O2": {
+      "precision": 0.5308641975308642,
+      "recall": 0.5149700598802395,
+      "f1": 0.5227963525835866,
+      "support": 167
+     },
+     "LEL": {
+      "precision": 0.5510204081632653,
+      "recall": 0.5977859778597786,
+      "f1": 0.5734513274336284,
+      "support": 271
+     },
+     "CO": {
+      "precision": 0.42745098039215684,
+      "recall": 0.5265700483091788,
+      "f1": 0.47186147186147187,
+      "support": 207
+     },
+     "H2S": {
+      "precision": 0.4230769230769231,
+      "recall": 0.5764192139737991,
+      "f1": 0.4879852125693161,
+      "support": 229
+     },
+     "CO2": {
+      "precision": 0.8008474576271186,
+      "recall": 0.4909090909090909,
+      "f1": 0.6086956521739131,
+      "support": 385
+     },
+     "NONE": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 0
+     }
+    },
+    "confusion_matrix": {
+     "labels": [
+      "O2",
+      "LEL",
+      "CO",
+      "H2S",
+      "CO2",
+      "NONE"
+     ],
+     "rows_true_cols_pred": [
+      [
+       86,
+       0,
+       25,
+       55,
+       1,
+       0
+      ],
+      [
+       28,
+       162,
+       66,
+       2,
+       13,
+       0
+      ],
+      [
+       1,
+       49,
+       109,
+       31,
+       17,
+       0
+      ],
+      [
+       10,
+       61,
+       10,
+       132,
+       16,
+       0
+      ],
+      [
+       37,
+       22,
+       45,
+       92,
+       189,
+       0
+      ],
+      [
+       0,
+       0,
+       0,
+       0,
+       0,
+       0
+      ]
+     ]
+    },
+    "classes_present": [
+     "O2",
+     "LEL",
+     "CO",
+     "H2S",
+     "CO2"
+    ],
+    "macro_f1": 0.5329580033243831,
+    "fit_seconds": 0.7
+   },
+   "RandomForest": {
+    "n": 1259,
+    "accuracy": 0.4948371723590151,
+    "macro_f1_all": 0.4048505818130703,
+    "macro_f1_gases_only": 0.4858206981756844,
+    "none_share": 0.0,
+    "per_class": {
+     "O2": {
+      "precision": 0.4433497536945813,
+      "recall": 0.5389221556886228,
+      "f1": 0.4864864864864865,
+      "support": 167
+     },
+     "LEL": {
+      "precision": 0.3848797250859107,
+      "recall": 0.4132841328413284,
+      "f1": 0.398576512455516,
+      "support": 271
+     },
+     "CO": {
+      "precision": 0.43005181347150256,
+      "recall": 0.40096618357487923,
+      "f1": 0.415,
+      "support": 207
+     },
+     "H2S": {
+      "precision": 0.47686832740213525,
+      "recall": 0.5851528384279476,
+      "f1": 0.5254901960784314,
+      "support": 229
+     },
+     "CO2": {
+      "precision": 0.7010309278350515,
+      "recall": 0.5298701298701298,
+      "f1": 0.6035502958579881,
+      "support": 385
+     },
+     "NONE": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 0
+     }
+    },
+    "confusion_matrix": {
+     "labels": [
+      "O2",
+      "LEL",
+      "CO",
+      "H2S",
+      "CO2",
+      "NONE"
+     ],
+     "rows_true_cols_pred": [
+      [
+       90,
+       9,
+       20,
+       27,
+       21,
+       0
+      ],
+      [
+       52,
+       112,
+       33,
+       33,
+       41,
+       0
+      ],
+      [
+       0,
+       55,
+       83,
+       51,
+       18,
+       0
+      ],
+      [
+       32,
+       37,
+       19,
+       134,
+       7,
+       0
+      ],
+      [
+       29,
+       78,
+       38,
+       36,
+       204,
+       0
+      ],
+      [
+       0,
+       0,
+       0,
+       0,
+       0,
+       0
+      ]
+     ]
+    },
+    "classes_present": [
+     "O2",
+     "LEL",
+     "CO",
+     "H2S",
+     "CO2"
+    ],
+    "macro_f1": 0.4858206981756844,
+    "fit_seconds": 5.6
+   },
+   "HistGradientBoosting": {
+    "n": 1259,
+    "accuracy": 0.5242255758538522,
+    "macro_f1_all": 0.42972836144383425,
+    "macro_f1_gases_only": 0.5156740337326011,
+    "none_share": 0.0,
+    "per_class": {
+     "O2": {
+      "precision": 0.3790322580645161,
+      "recall": 0.562874251497006,
+      "f1": 0.4530120481927711,
+      "support": 167
+     },
+     "LEL": {
+      "precision": 0.5111821086261981,
+      "recall": 0.5904059040590406,
+      "f1": 0.547945205479452,
+      "support": 271
+     },
+     "CO": {
+      "precision": 0.4787234042553192,
+      "recall": 0.43478260869565216,
+      "f1": 0.45569620253164556,
+      "support": 207
+     },
+     "H2S": {
+      "precision": 0.542016806722689,
+      "recall": 0.5633187772925764,
+      "f1": 0.5524625267665952,
+      "support": 229
+     },
+     "CO2": {
+      "precision": 0.6875,
+      "recall": 0.4857142857142857,
+      "f1": 0.5692541856925418,
+      "support": 385
+     },
+     "NONE": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 0
+     }
+    },
+    "confusion_matrix": {
+     "labels": [
+      "O2",
+      "LEL",
+      "CO",
+      "H2S",
+      "CO2",
+      "NONE"
+     ],
+     "rows_true_cols_pred": [
+      [
+       94,
+       11,
+       7,
+       26,
+       29,
+       0
+      ],
+      [
+       33,
+       160,
+       44,
+       7,
+       27,
+       0
+      ],
+      [
+       1,
+       54,
+       90,
+       42,
+       20,
+       0
+      ],
+      [
+       48,
+       31,
+       12,
+       129,
+       9,
+       0
+      ],
+      [
+       72,
+       57,
+       35,
+       34,
+       187,
+       0
+      ],
+      [
+       0,
+       0,
+       0,
+       0,
+       0,
+       0
+      ]
+     ]
+    },
+    "classes_present": [
+     "O2",
+     "LEL",
+     "CO",
+     "H2S",
+     "CO2"
+    ],
+    "macro_f1": 0.5156740337326011,
+    "fit_seconds": 26.3
+   }
+  },
+  "time": {
+   "RandomForest": {
+    "n_true": 1259,
+    "n_predicted": 1259,
+    "coverage": 1.0,
+    "mae": 6.39125947281026,
+    "median_ae": 4.860249465445278,
+    "rmse": 8.91237225961197,
+    "within_5min": 0.5083399523431295,
+    "within_10min": 0.8165210484511517,
+    "bias": 0.005414301735609749,
+    "fit_seconds": 59.9
+   },
+   "HistGradientBoosting": {
+    "n_true": 1259,
+    "n_predicted": 1259,
+    "coverage": 1.0,
+    "mae": 6.038826223574387,
+    "median_ae": 4.328851517674908,
+    "rmse": 8.668911264400364,
+    "within_5min": 0.5552025416997617,
+    "within_10min": 0.8173153296266878,
+    "bias": -0.3849451445013936,
+    "fit_seconds": 5.6
+   }
+  }
+ },
+ "selected": {
+  "risk60": "LogisticRegression",
+  "risk30": "LogisticRegression",
+  "gas": "LogisticRegression",
+  "time": "HistGradientBoosting"
+ },
+ "thresholds": {
+  "risk60": {
+   "value": 0.2267,
+   "rule": "recall>=0.8 조건에서 F1 최대 (F1=0.488)"
+  },
+  "risk30": {
+   "value": 0.1735,
+   "rule": "recall>=0.8 조건에서 F1 최대 (F1=0.457)"
+  }
+ },
+ "n_windows": {
+  "train": 45488,
+  "validation": 9525
+ },
+ "calibration": {
+  "risk60": {
+   "method": "isotonic on validation",
+   "brier_raw": 0.16403366056402546,
+   "brier_calibrated": 0.08517663401234035,
+   "used": true,
+   "note": "보정기는 validation으로 적합했고 임계값도 같은 validation의 보정 확률에서 정했다(둘 다 validation 사용, test 미사용)."
+  },
+  "risk30": {
+   "method": "isotonic on validation",
+   "brier_raw": 0.1624208124300674,
+   "brier_calibrated": 0.08031383550637813,
+   "used": true,
+   "note": "보정기는 validation으로 적합했고 임계값도 같은 validation의 보정 확률에서 정했다(둘 다 validation 사용, test 미사용)."
+  }
+ },
+ "ablation_without_window_len_min": {
+  "threshold": 0.5223,
+  "precision": 0.24933545986177566,
+  "recall": 0.8003412969283277,
+  "f1": 0.3802188893392785,
+  "pr_auc": 0.44587496929618425,
+  "roc_auc": 0.8161043691155085
+ },
+ "selection_rule": "분류: validation PR-AUC 최대 모델. 단, 더 단순한 모델(LogisticRegression < HistGradientBoosting < RandomForest 순)이 최대값의 0.01 이내면 단순한 쪽을 택한다. 가스: macro F1(5가스) 같은 규칙. 시간: MAE 최소, 0.25분 이내면 단순한 쪽."
+}

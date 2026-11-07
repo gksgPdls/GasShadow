@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gas Shadow</title>
+    <meta name="description" content="조선소 작업 현장 밀폐공간 가스 안전 관제" />
+    <!-- 링크 미리보기 (카카오톡·슬랙 등). 이미지는 절대 주소여야 한다 -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Gas Shadow" />
+    <meta property="og:description" content="조선소 작업 현장 밀폐공간 가스 안전 관제" />
+    <meta property="og:url" content="https://gas-shadow-production.up.railway.app/" />
+    <meta property="og:image" content="https://gas-shadow-production.up.railway.app/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <!--
+      처음 열 때 크기: 화면 폭이 기준 폭(1670px)보다 좁으면 그 비율만큼 페이지 전체를 줄여(zoom),
+      어느 노트북에서 열어도 같은 배치·크기로 보이게 한다. 창 크기를 바꾸면 다시 맞춘다.
+      기준 폭 1670 = 1920 ÷ 1.15 (1920px 기준에서 사파리 ⌘+ 한 단계(115%)만큼 크게)
+      줄인 만큼 화면 높이·폭(--app-h · --app-w)은 늘려 둬서, 높이를 채우는 칸이 짧아지지 않게 한다 (100dvh·vw 대신 이 값을 쓴다)
+    -->
+    <script>
+      (function () {
+        var DESIGN_W = 1670, MIN = 0.6
+        function fit() {
+          var z = Math.min(1, Math.max(MIN, window.innerWidth / DESIGN_W))
+          var d = document.documentElement
+          d.style.zoom = z
+          d.style.setProperty("--zoom", z)
+          d.style.setProperty("--app-h", window.innerHeight / z + "px")
+          d.style.setProperty("--app-w", window.innerWidth / z + "px")
+        }
+        fit()
+        window.addEventListener("resize", fit)
+      })()
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

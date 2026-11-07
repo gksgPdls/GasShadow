@@ -1,0 +1,163 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "pretendard/dist/web/variable/pretendardvariable-dynamic-subset.css";
+@import "@fontsource-variable/host-grotesk";
+@import "@fontsource-variable/jetbrains-mono";
+@import "./three/yard3d.css";
+@import "./minimal.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+  스타일: designprompts.dev "Software" (거의 흰 바탕 · 전기 파랑 포인트 하나 · 어두운 띠)
+  + 상단 상태 띠만 "Industrial" (어두운 계기판 · 고정폭 숫자).
+  색 규칙: 진한 색은 상태(법정 초과·센서 결측·경계·정상)에만 쓰고, 파랑은 버튼·링크·선택에만 쓴다.
+*/
+
+@theme inline {
+  --font-sans: "Pretendard Variable", Pretendard, -apple-system, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  --font-heading: "Host Grotesk Variable", "Pretendard Variable", Pretendard, sans-serif;
+  --font-mono: "JetBrains Mono Variable", ui-monospace, Menlo, monospace;
+
+  --color-legal: var(--legal);
+  --color-legal-soft: var(--legal-bg);
+  --color-unauth: var(--unauth);
+  --color-unauth-soft: var(--unauth-bg);
+  --color-missing: var(--missing);
+  --color-missing-soft: var(--missing-bg);
+  --color-warn: var(--warn);
+  --color-warn-soft: var(--warn-bg);
+  --color-ok: var(--ok);
+  --color-ok-soft: var(--ok-bg);
+  --color-idle: var(--idle);
+  --color-warn-ink: var(--warn-ink);
+  --color-navy: var(--navy);
+  --color-navy-2: var(--navy-2);
+  --color-navy-line: var(--navy-line);
+  --color-navy-muted: var(--navy-muted);
+  --color-cream: var(--cream);
+
+  --color-strip: var(--strip);
+  --color-strip-foreground: var(--strip-foreground);
+  --color-strip-muted: var(--strip-muted);
+  --color-strip-line: var(--strip-line);
+  --color-legal-on-dark: var(--legal-on-dark);
+  --color-unauth-on-dark: var(--unauth-on-dark);
+  --color-missing-on-dark: var(--missing-on-dark);
+
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+}
+
+:root {
+  --background: #f6f7f9;
+  --foreground: #0b0d12;
+  --card: #ffffff;
+  --card-foreground: #0b0d12;
+  --popover: #ffffff;
+  --popover-foreground: #0b0d12;
+  --primary: #1546e6;
+  --primary-foreground: #ffffff;
+  --secondary: #f1f3f6;
+  --secondary-foreground: #0b0d12;
+  --muted: #f1f3f6;
+  --muted-foreground: #667085;
+  --accent: #eef2ff;
+  --accent-foreground: #1546e6;
+  --destructive: #c0392b;
+  --border: #e4e7ec;
+  --input: #e4e7ec;
+  --ring: #1546e6;
+  --radius: 0.625rem;
+
+  /* 상태 색 (3D가 getComputedStyle로 읽으므로 hex 유지)
+     법정 초과 = 빨강(거의 뜨면 안 되는 상태) · 경계·사전 예측 = 로고 주황 · 센서 결측 = 보라 · 정상 = 초록 */
+  --legal: #d92d20;
+  --legal-bg: #fdecea;
+  /* 무허가 작업 의심 (허가 없는 구역에서 가스 감지) */
+  --unauth: #b5179e;
+  --unauth-bg: #fbe6f6;
+  --missing: #6c5ce7;
+  --missing-bg: #efecfd;
+  --warn: #f5a524;
+  --warn-bg: #fff4e0;
+  /* 흰 바탕 위 주황 글씨는 로고 주황보다 진하게 (읽기용) */
+  --warn-ink: #b86a00;
+  --ok: #2e8b57;
+  --ok-bg: #e7f4ec;
+
+  /* 위쪽 네비 (남색) · 로고 */
+  --navy: #0f1b2d;
+  --navy-2: #16243a;
+  --navy-line: #22324c;
+  --navy-muted: #8a97ab;
+  --cream: #f3ece0;
+  --idle: #c9ccd1;
+
+  /* 어두운 띠 (상태 바 · 데모 제어) */
+  --strip: #0e1116;
+  --strip-foreground: #eef0f3;
+  --strip-muted: #8a93a3;
+  --strip-line: #232833;
+  --legal-on-dark: #ff8a7a;
+  --unauth-on-dark: #ff8ae2;
+  --missing-on-dark: #b7adff;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply font-sans;
+    font-feature-settings: "ss06";
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-size: 14px;
+    letter-spacing: -0.005em;
+    /* 한글은 단어(어절) 단위로 줄바꿈 ("있습니\n다" 방지). 너무 긴 낱말만 중간에서 끊는다 */
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+/* 오늘 관제 3D: 블록 위 상태 이름표·말풍선은 숨기고 구역 색으로만 상태를 보여준다 (3D 코드는 그대로) */
+.b3.color-only .b3-tag,
+.b3.color-only .b3-say {
+  display: none;
+}
+
+@keyframes legal-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--legal) 45%, transparent); }
+  50% { box-shadow: 0 0 0 6px color-mix(in srgb, var(--legal) 0%, transparent); }
+}
+.legal-pulse {
+  animation: legal-pulse 1.6s ease-in-out infinite;
+}

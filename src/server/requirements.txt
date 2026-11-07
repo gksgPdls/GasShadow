@@ -1,0 +1,12 @@
+fastapi
+uvicorn[standard]
+psycopg[binary]
+psycopg_pool
+httpx
+langgraph
+pydantic
+numpy
+pandas
+# 가스예측모델/artifacts 의 joblib 파일을 만든 버전
+scikit-learn==1.9.1
+joblib

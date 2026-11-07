@@ -1,0 +1,261 @@
+random_seed: 20261031
+source_type: SYNTHETIC
+time:
+  sample_interval_s: 15
+  prediction_horizon_min: 60
+  pre_work_min:
+  - 5
+  - 15
+  work_min:
+  - 20
+  - 85
+  recovery_min:
+  - 5
+  - 25
+  total_max_min: 120
+  none_episode_min:
+  - 30
+  - 60
+  base_datetime: '2026-11-02T06:00:00'
+  episode_spacing_h: 3
+thresholds:
+  o2_low_pct: 18.0
+  o2_high_pct: 23.5
+  co_ppm: 30.0
+  h2s_ppm: 10.0
+  co2_pct: 1.5
+  lel_pct: 10.0
+approach_band:
+  o2_pct: 0.5
+  co_ppm: 6.0
+  h2s_ppm: 2.0
+  co2_pct: 0.3
+  lel_pct: 2.0
+background:
+  o2_pct:
+  - 20.8
+  - 20.95
+  lel_pct:
+  - 0.0
+  - 1.0
+  co_ppm:
+  - 0.0
+  - 2.0
+  h2s_ppm:
+  - 0.0
+  - 0.3
+  co2_pct:
+  - 0.04
+  - 0.08
+noise_sd:
+  o2_pct: 0.04
+  lel_pct: 0.3
+  co_ppm: 0.6
+  h2s_ppm: 0.1
+  co2_pct: 0.01
+resolution:
+  o2_pct: 0.1
+  lel_pct: 1.0
+  co_ppm: 1.0
+  h2s_ppm: 0.1
+  co2_pct: 0.01
+approach_peak:
+  o2_low:
+  - 18.15
+  - 18.45
+  o2_high:
+  - 23.05
+  - 23.35
+  co:
+  - 24.5
+  - 28.5
+  h2s:
+  - 8.2
+  - 9.4
+  co2:
+  - 1.22
+  - 1.46
+  lel:
+  - 8.2
+  - 9.1
+exceed_peak:
+  o2_low:
+  - 15.5
+  - 17.6
+  o2_high:
+  - 23.8
+  - 25.0
+  co:
+  - 34
+  - 120
+  h2s:
+  - 11
+  - 40
+  co2:
+  - 1.6
+  - 3.5
+  lel:
+  - 12
+  - 40
+o2_high_fraction: 0.15
+mild_fraction_of_gap:
+- 0.15
+- 0.5
+curve:
+  onset_after_start_min:
+  - 2
+  - 25
+  rise_tau_min:
+  - 3
+  - 20
+  hold_min:
+  - 5
+  - 30
+  decay_tau_min:
+  - 5
+  - 25
+  recover_in_work_hold_min:
+  - 3
+  - 12
+  secondary_drift_prob: 0.5
+task_types:
+- HOT_WORK
+- PAINTING_CLEANING
+- ELECTRICAL
+- RADIOGRAPHY
+- COMMISSIONING
+- SCAFFOLDING
+- FLUID_SUPPLY
+- PRESSURE_TEST
+- BARGE_WORK
+- HEAVY_LIFTING
+- OTHER
+- NONE
+task_gas_weight:
+  HOT_WORK:
+    CO: 5.0
+    O2: 1.5
+    CO2: 1.5
+    LEL: 1.0
+    H2S: 0.5
+  PAINTING_CLEANING:
+    LEL: 5.0
+    CO2: 1.0
+    O2: 1.5
+    CO: 0.8
+    H2S: 0.7
+  FLUID_SUPPLY:
+    O2: 3.0
+    CO2: 2.5
+    H2S: 2.5
+    CO: 0.8
+    LEL: 1.0
+  COMMISSIONING:
+    O2: 3.0
+    CO2: 2.5
+    H2S: 2.0
+    CO: 1.0
+    LEL: 1.0
+  ELECTRICAL:
+    O2: 1.0
+    CO2: 1.0
+    H2S: 0.5
+    CO: 0.7
+    LEL: 0.5
+  RADIOGRAPHY:
+    O2: 1.0
+    CO2: 1.0
+    H2S: 0.5
+    CO: 0.5
+    LEL: 0.5
+  SCAFFOLDING:
+    O2: 1.0
+    CO2: 1.0
+    H2S: 0.5
+    CO: 0.7
+    LEL: 0.5
+  PRESSURE_TEST:
+    O2: 1.2
+    CO2: 1.0
+    H2S: 0.5
+    CO: 0.5
+    LEL: 0.5
+  BARGE_WORK:
+    O2: 1.0
+    CO2: 1.0
+    H2S: 1.0
+    CO: 0.7
+    LEL: 0.7
+  HEAVY_LIFTING:
+    O2: 1.0
+    CO2: 1.0
+    H2S: 0.5
+    CO: 0.5
+    LEL: 0.5
+  OTHER:
+    O2: 1.0
+    CO2: 1.0
+    H2S: 1.0
+    CO: 1.0
+    LEL: 1.0
+episodes:
+  normal_per_task: 22
+  mild_change: 60
+  approach_per_gas: 62
+  exceed_per_gas: 60
+  recovery_in_work: 50
+  recovery_after_work: 50
+  sensor_short_missing: 50
+  sensor_comm_loss: 50
+  sensor_error: 50
+  missing_before_danger: 50
+  min_per_task: 50
+  sensor_overlay_on_danger_prob: 0.5
+  split:
+    train: 0.7
+    validation: 0.15
+    test: 0.15
+sensor_faults:
+  short_missing:
+    count:
+    - 1
+    - 3
+    samples:
+    - 1
+    - 3
+  comm_loss_min:
+  - 5
+  - 30
+  sensor_error:
+    count:
+    - 1
+    - 2
+    samples:
+    - 1
+    - 2
+  sensor_error_magnitude:
+    o2_pct:
+    - 0.8
+    - 3.0
+    lel_pct:
+    - 5
+    - 30
+    co_ppm:
+    - 15
+    - 80
+    h2s_ppm:
+    - 3
+    - 15
+    co2_pct:
+    - 0.3
+    - 1.2
+  missing_before_danger:
+    lead_min:
+    - 1
+    - 6
+    duration_min:
+    - 3
+    - 15
+output:
+  dir: output
+  sample_rows: 20000
